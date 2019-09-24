@@ -1,0 +1,34 @@
+define([], function() {
+//滑动滚轮超过680 显示工具栏
+$(window).scroll(function(){
+	var $tools = $(".icourse-right-tools");
+	if($(document).scrollTop() < 680){
+		$tools.fadeOut();
+	}
+	else{
+		$tools.fadeIn();
+	}
+});
+//点击工具栏的按钮切换显示隐藏下载区域
+var $kehuduan = $(".kehuduan-download");
+var $kehuduan_box = $('.index-tool-kehuduan-box');
+var $kehuduan_wrap = $('.icourse-right-tools');
+$kehuduan.on("click",function(){
+	$kehuduan_box.toggleClass("active");
+	var hidden = $kehuduan_box.is(":hidden");
+	if (hidden) {
+		$(document).off("kehuduan.click");
+	} else { // show
+		$(document).on("kehuduan.click", function(event) {
+			var target = event.target;
+			if (!$kehuduan_wrap.has(target)[0]) {
+				$kehuduan_box.removeClass("active");
+				$(document).off("kehuduan.click");
+			}
+		});
+		
+	}
+//	return false;
+	
+});
+})

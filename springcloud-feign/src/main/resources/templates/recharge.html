@@ -1,0 +1,44 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+
+</head>
+<body>
+<center><form   id="formidd">
+<div class="form-group">
+
+    <label>充值：</label><br>
+    <input type="radio" name="day" value="30" onclick="bianli(this.value)">30天
+    <input type="radio" name="day" value="60" onclick="bianli(this.value)">60天
+    <input type="radio" name="day" value="180" onclick="bianli(this.value)">180天
+    <input type="radio" name="day" value="360" onclick="bianli(this.value)">360天
+</div>
+    <span id="aa"></span>
+    <span id="ww" hidden="hidden"></span>
+    <span id="ss" hidden></span>
+    <input type="button" value="购买" onclick="recharge()">
+</form></center>
+</body>
+<script>
+    function bianli(a) {
+      $("#aa").text(a*2+"元")
+        $("#ss").text(a)
+        $("#ww").text(a*2)
+    }
+function recharge(){
+   var price=  $("#ww").text();
+    var day= $("#ss").text();
+
+   /* alert(price);
+    alert(day);*/
+    location.href="../goAlipay?day="+day+"&price="+price;
+}
+
+
+</script>
+
+
+</html>

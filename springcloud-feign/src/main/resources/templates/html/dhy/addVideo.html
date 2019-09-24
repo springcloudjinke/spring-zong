@@ -1,0 +1,172 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Title</title>
+
+    <!-- 引入jquery -->
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+
+    <!-- 引入bootstrap的css -->
+    <link  href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+    <!-- 引入bootstrap-treeview的css -->
+    <link  href="../js/treeview/bootstrap-treeview.min.css" rel="stylesheet" >
+    <!-- 引入bootstrap-addTabs的css -->
+    <link  href="../js/addTabs/addTabs.css" rel="stylesheet" >
+    <!-- 引入bootstrap-table的css -->
+    <link  href="../js/table/bootstrap-table.min.css" rel="stylesheet" >
+    <!-- 引入fileinput的css -->
+    <link type="text/css" rel="stylesheet" href="../js/fileinput/css/fileinput.min.css" />
+    <!-- 引入my97 -->
+    <script type="text/javascript" src="../js/my97/WdatePicker.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="../js/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="../js/treeview/bootstrap-treeview.min.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="../js/addTabs/addTabs.js"></script>
+    <!-- 引入bootstrap-table的js-->
+    <script type="text/javascript" src="../js/table/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="../js/table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!-- 引入bootbox.js -->
+    <script type="text/javascript" src="../js/bootbox/bootbox.js"></script>
+    <!-- 引入fileinput的js -->
+    <script type="text/javascript" src="../js/fileinput/js/fileinput.min.js"></script>
+    <!--  引入fileinput的js -->
+    <script type="text/javascript" src="../js/fileinput/js/locales/zh.js"></script>
+
+    <script src="../js/uploadify/jquery.uploadify.min.js"></script>
+    <link rel="stylesheet" href="../js/uploadify/uploadify.css">
+
+    <script type="text/javascript" src="../js/fileinput/themes/fa/theme.js"></script>
+    <!--oss js-->
+    <link rel="stylesheet" href="/js/bootstrap-fileinput/css/fileinput.css">
+    <script type="text/javascript" src="/js/bootstrap-fileinput/js/fileinput.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-fileinput/js/locales/zh.js"></script>
+
+</head>
+<body>
+
+<form role="form" id="formId" enctype="multipart/form-data">
+    <input type="hidden" th:value="${id}" name="tid" id="">
+    <div class="form-group">
+        <label>视频名称</label>
+        <input type="text" class="form-control" name="videoName" placeholder="老师名称"/>
+    </div>
+    <div class="form-group">
+        <label>课程简介</label>
+        <input type="text"   class="form-control" name="courseIntroduction" placeholder="课程简介"/>
+    </div>
+
+    <div class="form-group">
+        <label>本讲简介</label>
+        <input type="text"   class="form-control" name="introduction" placeholder="本讲简介"/>
+    </div>
+
+    <div class="row myrow">
+        <form id= "uploadForm">
+            <p >指定文件名：<div id="video"></div></p >
+            <p >上传文件： <input type="file" name="file"/></p>
+            <input type="button" value="上传" onclick="doUpload()" />
+        </form>
+    </div>
+
+</form>
+
+</body>
+
+<script>
+    $(function () {
+        uploadImg();
+    })
+    function uploadImg(url){
+        $('#headImg').fileinput({
+            language: 'zh', //设置语言
+            uploadUrl: '../video/updaloadImg', //上传的地址
+            allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
+            showUpload: true, //是否显示上传按钮
+            showCaption: false,//是否显示标题
+            browseClass: "btn btn-primary", //按钮样式
+            dropZoneEnabled: false,//是否显示拖拽区域
+            //minImageWidth: 50, //图片的最小宽度
+            //minImageHeight: 50,//图片的最小高度
+            //maxImageWidth: 1000,//图片的最大宽度
+            //maxImageHeight: 1000,//图片的最大高度
+            //maxFileSize: 0,//单位为kb，如果为0表示不限制文件大小
+            //minFileCount: 0,
+            maxFileCount: 2, //表示允许同时上传的最大文件个数
+            enctype: 'multipart/form-data',
+            validateInitialCount:true,
+            previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+            msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
+
+        }).on('fileuploaded', function(event, data, previewId, index) {
+
+            var imgval = $('#testimg').val();
+
+            if(imgval == null || imgval == "" || imgval == undefined){
+                imgval = data.response.responseText;
+            }/*else{
+			imgval += ","+"http://<%= request.getServerName()%>:<%=request.getServerPort()%><%=request.getContextPath()%>/"+data.response;
+		}*/
+            $('#testimg').val(imgval);
+        });
+    }
+    /*    function queryType(){
+            $.ajax({
+                url:"../goods/queryType",
+                success:function(data){
+                    var op ="<option value='0'>请选择";
+                    for (var i=0;i<data.length;i++){
+                        op +="<option value='"+data[i].typeID+"'>"+data[i].typeName;
+                    }
+                    $("#type").html(op);
+                }
+            })
+        }
+        function queryTypeTwo(){
+            $.ajax({
+                url:"../goods/TypeOne",
+                success:function(data){
+                    var op ="<option value='0'>请选择";
+                    for (var i=0;i<data.length;i++){
+                        op +="<option value='"+data[i].id+"'>"+data[i].ram;
+                    }
+                    $("#typeTwo").html(op);
+                }
+            })
+        }*/
+
+
+    function doUpload() {
+      var formData = new FormData($( "#formId" )[0]);
+
+       // var form = $("#formId").serialize();
+        alert(formData)
+        $.ajax({
+          /*  url: 'http://localhost:8081/ftpuploadimg' ,*/
+            url: '../video/ftpuploadimg' ,
+            type: 'POST',
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (returndata) {
+              //  alert(returndata);
+               //
+                var aa  =   "<input type='text'  name='videoUrl' hidden value='ftp://192.168.2.137/"+returndata+"'/>"
+
+                alert(aa)
+                $("#video").html(aa)
+            },
+            error: function (returndata) {
+                alert(returndata);
+            }
+        });
+    }
+
+
+</script>
+
+</html>

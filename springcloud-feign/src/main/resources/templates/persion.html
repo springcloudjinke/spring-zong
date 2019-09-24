@@ -1,0 +1,204 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:c="c">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+    <!-- 引入jquery -->
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <!-- 引入bootstrap的css -->
+    <link  href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+    <!-- 引入bootstrap-treeview的css -->
+    <link  href="../js/treeview/bootstrap-treeview.min.css" rel="stylesheet" >
+    <!-- 引入bootstrap-addTabs的css -->
+    <link  href="../js/addTabs/addTabs.css" rel="stylesheet" >
+    <!-- 引入bootstrap-table的css -->
+    <link  href="../js/table/bootstrap-table.min.css" rel="stylesheet" >
+    <!-- 引入fileinput的css -->
+    <link type="text/css" rel="stylesheet" href="../js/fileinput/css/fileinput.min.css" />
+    <!-- 引入my97 -->
+    <script type="text/javascript" src="../js/my97/WdatePicker.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="../js/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="../js/treeview/bootstrap-treeview.min.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="../js/addTabs/addTabs.js"></script>
+    <!-- 引入bootstrap-table的js-->
+    <script type="text/javascript" src="../js/table/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="../js/table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!-- 引入bootbox.js -->
+    <script type="text/javascript" src="../js/bootbox/bootbox.js"></script>
+    <!-- 引入fileinput的js -->
+    <script type="text/javascript" src="../js/fileinput/js/fileinput.min.js"></script>
+    <!--  引入fileinput的js -->
+    <script type="text/javascript" src="../js/fileinput/js/locales/zh.js"></script>
+
+    <script src="../js/uploadify/jquery.uploadify.min.js"></script>
+    <link rel="stylesheet" href="../js/uploadify/uploadify.css">
+
+    <script type="text/javascript" src="../js/fileinput/themes/fa/theme.js"></script>
+    <!--oss js-->
+    <link rel="stylesheet" href="/js/bootstrap-fileinput/css/fileinput.css">
+    <script type="text/javascript" src="/js/bootstrap-fileinput/js/fileinput.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-fileinput/js/locales/zh.js"></script>
+    <style type="text/css">
+        body {padding-top:55px;}
+    </style>
+</head>
+<body>
+<!--导航条-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <!--定义在容器顶部-->
+    <div class="container-fluid">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- 头部信息 -->
+        <div class="navbar-header">
+            <a class="navbar-brand glyphicon glyphicon-globe" href="../page/main" id="menu-toggle">
+                爱课程
+            </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+            </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- ============================导航结束==================================-->
+<!--=========栅格布局 ==============-->
+<div class="row">
+    <div class="col-md-3">
+        <a class="list-group-item" data-addtab="userMenu" data-target="#tabs" data-url="http://www.baidu.com">
+            个人中心
+        </a>
+        <!-- tree 的插件 -->
+        <div id="treeDiv"></div>
+    </div>
+    <div class="col-md-9">
+        <!--   选项卡    -->
+        <!-- Nav tabs -->
+        <ul id="tabs" class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+                <a href="#home" aria-controls="home" role="tab" data-toggle="tab">欢迎</a></li>
+        </ul>
+        <!-- 选项卡  内容 -->
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" style="" class="tab-pane active " id="home">
+                <form id="updform"><P><P>
+                    <input name="id" th:value="${session.luser.id}" id="stuId" type="hidden">
+                <center><font color="#FE7700" size="6px">你好~,欢迎进入个人中心</font></center>
+                    
+                    <font size="3">真实姓名:</font><br><input th:value="${session.luser.name}" name="name"> <br>
+                    <font size="3">昵称:</font><BR><input th:value="${session.luser.nickname}" name="nickname"> </font> <p>
+            <!--<font size="5">性别:<input type="radio" name="sex" c:if="th:value='${session.luser.sex}==1':checked">男
+                                <input type="radio" name="sex" c:if="th:value='${session.luser.sex}==2':checked">女
+                                </font>-->
+                    <font size="3">个人简介:</font><br><input th:value="${session.luser.resume}" name="resume"><P>
+
+                        <font size="3">会员状态:</font><BR><input th:value="${session.luser.getMember()}== 2 ?'非会员':'会员'" disabled><P>
+                        <input type="button" onclick="gou()" value="购买会员">
+
+                        <font size="3">会员状态:</font><BR><input th:value="${session.luser.getMember()}== 1 ?'会员':'非会员'" disabled><P>
+                        <font size="3">到期时间:</font><br><input th:value="${session.luser.getMember()}== 1 ?''+${session.luser.memberTime}+'':'请充值'" disabled>
+
+                        <input type="button" onclick="updData()" value="保存">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+        function updData(){
+            var stuId = $("#stuId").val();
+            //var form = $("#updform").serialize();
+            if(confirm("您确定要修改资料吗?")){
+                $.ajax({
+                    url:"../videowh/updData?stuId="+stuId,
+                    data:$("#updform").serialize(),
+                    type:"post",
+                    success:function(){
+                        location.href=location;
+                    },error:function(){
+                        alert("程序错误")
+                    }
+                })
+            }
+        }
+
+    $(function (){
+        $.addtabs({iframeHeight:870});
+        var tree = [
+            {
+                text:"个人信息",
+                url:"",
+                check:true
+            },
+            {
+                text:"我的课程",
+                url:"../page/mycourse"
+            },
+           /* {
+                text:"充值中心",
+                url:"../page/recharge"
+            },*/
+        ];
+
+        $("#treeDiv").treeview({
+            //data属性 树节点信息 json数组
+            data: tree,
+            //tree默认展开的节点级别默认为2
+            levels: 0,
+            //含有子节点的图标
+            collapseIcon:'glyphicon glyphicon-star-empty',
+            //没有子节点的图标
+            emptyIcon:'glyphicon glyphicon-star',
+            //背景颜色
+            //backColor: 'green'
+            //是否显示复选框
+            showCheckbox:true,
+            //是否允许选中多个节点
+            //multiSelect:true,
+            //启用节点的超链接功能默认为false,节点需指定href属性
+            enableLinks:false,
+            //事件当节点选中时
+            onNodeSelected:function(event,node){
+                //动态向 nav-tabs 导航标签添加tab选项卡
+                //addTabs方法  add() 添加tab  close()关闭tab  closeAll() 关闭全部tab
+                if(null !=  node.url){
+                    $.addtabs.add({
+                        id:node.id,
+                        title:node.text,
+                        url:node.url,
+                    })
+                }
+            }
+        })
+    });
+
+        function gou(){
+            location.href="../page/recharge";
+        }
+
+</script>
+<style type="text/css">
+    body {padding-top:55px;
+        background-position: center 0;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -ms-background-size: cover;
+    }
+</style>
+</html>

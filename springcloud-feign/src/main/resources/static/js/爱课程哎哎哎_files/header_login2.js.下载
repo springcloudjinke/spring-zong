@@ -1,0 +1,118 @@
+define(["SSO", "jquery"], function(SSO) {
+	// 点击"关注我们"滑出图标
+	var $guanzhu = $(".header-login-guanzhu>a");
+	var $guanzhu_box = $('.header-login-guanzhu-box');
+	var $kehuduan = $(".header-login-kehuduan>a");
+	var $kehuduan_box = $('.header-login-kehuduan-box');
+	$($guanzhu).on("click",function(){
+		$($guanzhu_box).fadeToggle();
+		if($($guanzhu_box).css("display") == "none"){
+			$(document).unbind("click");
+		}else{
+			$(document).on("click",function(event){
+				var target = $(event.target).attr("class");
+				if(target == undefined){
+					target = "null";
+				}
+				var str = '.' + target.split(" ")[0];
+				if($guanzhu_box.is(str) ||$guanzhu_box.has(str).length || $guanzhu.is(str) || $guanzhu.has(str).length){
+					return;
+				}
+				else{
+					$($guanzhu_box).fadeOut();
+				}
+			});
+		}
+	});
+	// 点击"客户端下载"滑出图标
+	$($kehuduan).on("click",function(){
+		$($kehuduan_box).fadeToggle();
+		if($($kehuduan_box).css("display") == "none"){
+			$(document).unbind("click");
+		}else{
+			$(document).on("click",function(event){
+				var target = $(event.target).attr("class");
+				if(target == undefined){
+					target = "null";
+				}
+				var str = '.' + target.split(" ")[0];
+				if($kehuduan_box.is(str) ||$kehuduan_box.has(str).length || $kehuduan.is(str) || $kehuduan.has(str).length){
+					return;
+				}
+				else{
+					$($kehuduan_box).fadeOut();
+				}
+			});
+		}
+	});
+	
+	// sso
+	var sso = SSO();
+	
+//	setTimeout(function(){
+		// 判断是否登录
+		sso.isLogin({
+			success: function(user) {
+				loginState(user);
+			},
+			error: function() {
+				loginoutState();
+			}
+		});
+//	},1000);
+	
+	// 登录状态
+	function loginState(user) {
+		$("#header_login_dengluzhuce").hide();
+		$("#header_login_name_text").html(user.nickName);
+		$("#header_login_name").show();
+		if (user.certFlag=="4") {
+			$("#isTeacher").hide();
+			$(".auditing-user").hide();
+		}else if(user.certFlag=="5"){
+			$("#isTeacher").hide();
+			$(".vip-user").hide();
+		}else {
+			$(".auditing-user").hide();
+			$(".vip-user").hide();
+		}
+		// 监听退出按钮
+		$("#header_logout_text").off("click").on("click", function() {
+			// 先判断是否是登录状态，如果是，就退出，如果不是，直接刷新页面
+			sso.isLogin({
+				success: function(user) {
+					// 如果是登录状态，就退出
+					sso.loginout({
+						success: function() {
+						},
+						error: function() {
+						}
+					});
+				},
+				error: function() {
+					// 如果不是，直接刷新
+					window.location.reload();
+				}
+			});
+			
+		});
+	}
+	
+	// 未登录状态
+	function loginoutState() {
+		$("#header_login_dengluzhuce").show();
+		$("#header_login_name").hide();
+		
+		// 监听登录按钮
+		$("#header-login-btn").off("click").on("click", function() {
+			sso.login({
+				success: function(user) {
+					//window.location.reload();
+					//loginState(user);
+				}
+			})
+		});
+		
+	}
+});
+

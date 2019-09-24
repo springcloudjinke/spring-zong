@@ -1,0 +1,5 @@
+define(["jquery"], function() {
+	$("#homeSearchBtn").on("click", function(){
+		$("#homeSerch").submit();
+	});
+});

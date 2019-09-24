@@ -1,0 +1,108 @@
+.w1226 {
+    width: 1226px;
+    margin: 0 auto;
+}
+.mt-15 {
+    margin-top: 15px;
+}
+.no-mr {
+    margin-right: 0 !important;
+}
+
+.no-ml {
+    margin-left: 0 !important;
+}
+
+/*hover浮动效果*/
+.hover-active {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .3);
+    transform: translate3d(0, -4px, 0);
+}
+
+/*左边两张图片*/
+
+.product-item-ha .pro-all .phone-r ul li:nth-child(1) {
+    margin-left: 0;
+    padding-top: 0;
+}
+
+.product-item-ha .pro-all .phone-r ul li:nth-child(6) {
+    margin-left: 0;
+    padding-top: 0;
+}
+
+.product-item-ha .pro-all .phone-r ul li:nth-child(1) img {
+    width: 234px;
+    height: 300px;
+}
+
+.product-item-ha .pro-all .phone-r ul li:nth-child(6) img {
+    width: 234px;
+    height: 300px;
+}
+
+.product-item-ha ul li {
+    float: left;
+    margin: 0 0 0 30px;
+    cursor: pointer;
+    height: 42px;
+}
+.current {
+    border-bottom: 2px solid #ff6700;
+}
+/*显示和隐藏*/
+.show {
+    display: block !important;
+}
+.no-show {
+    display: none !important;
+}
+.no_show {
+    display: none !important;
+}
+
+.left {
+    left: 0;
+}
+.right {
+    right: 0;
+}
+
+.no-after:after {
+    display: none;
+}
+
+.bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    background: rgba(0,0,0,0.02);
+}
+
+.main-color {
+    color: #ff6700 !important;
+}
+
+.item1,
+.item2,
+.item3,
+.item4,
+.item5,
+.item6 {
+    opacity: 0;
+}
+
+.bgc {
+    opacity: 1 !important;
+}
+
+.wd100 {
+    width: 100% !important;
+}
+
+.wd0 {
+    width: 0% !important;
+}

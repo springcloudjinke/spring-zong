@@ -1,0 +1,26 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: service-provider-hgj
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27017/mongodb
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.2.132:3306/jinke?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+
+mybatis:
+  config-locations: classpath:mybatis/confg.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.jk.model

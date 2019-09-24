@@ -1,0 +1,352 @@
+.pc-width {
+  width: 1190px;
+}
+.m-width {
+  width: 100%;
+}
+@media (max-width: 769px) {
+  .header-detail {
+    width: 100%;
+  }
+}
+@media (min-width: 769px) {
+  .header-detail {
+    width: 1190px;
+  }
+}
+.header-detail {
+  height: 140px;
+  margin: auto;
+}
+.search {
+  position: relative;
+  z-index: 1;
+  height: 60px;
+}
+.form {
+  position: absolute;
+  left: 320px;
+  top: 25px;
+  width: 550px;
+  height: 35px;
+}
+.search-box {
+  left: 0;
+  padding: 4px;
+  width: 490px;
+  height: 25px;
+  border: 1px solid #c81623;
+  line-height: 25px;
+  font-size: 1.4rem;
+  color: #555555;
+  outline: none;
+}
+.search-btn {
+  right: 0;
+  width: 50px;
+  height: 35px;
+  line-height: 35px;
+  border: none;
+  background-color: #c81623;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-left: -6px;
+  vertical-align: top;
+  cursor: pointer;
+  outline: none;
+}
+.shoppingcar {
+  position: absolute;
+  right: 0;
+  top: 25px;
+  width: 188px;
+  height: 33px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 33px;
+  z-index: 5;
+  border: 1px solid #dddddd;
+}
+.shoppingcar:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.shoppingcar:hover .dropdown {
+  display: block;
+}
+.icon-shoppingCar,
+.icon-right {
+  margin-right: 6px;
+  font-size: 1.8rem;
+  color: #ea3845;
+  vertical-align: middle;
+}
+.spacerDiv {
+  width: 188px;
+  height: 12px;
+  position: absolute;
+  right: 0;
+  top: -7px;
+  background-color: #fff;
+}
+.isgoods {
+  min-height: 49px;
+  padding-top: 10px;
+  line-height: 49px;
+  overflow: hidden;
+  color: #999;
+}
+.nogoods .icon-shopping-cart {
+  font-size: 4rem;
+  margin: 0 10px;
+}
+.nogoods span {
+  vertical-align: top;
+}
+.goodsTitle {
+  height: 25px;
+  line-height: 25px;
+  padding: 6px 8px;
+  text-align: left;
+  color: #777777;
+}
+.goodsCon {
+  background-color: #fff;
+  height: auto;
+  max-height: 344px;
+  overflow-y: auto;
+}
+.goodsCon-list {
+  margin-top: -1px;
+}
+.goodsCon-item {
+  padding: 8px 10px;
+  border-top: 1px dotted #bbbbbb;
+  line-height: 17px;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+.goodsCon-item:hover {
+  background-color: #f5f5f5;
+}
+.gi-img {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #dddddd;
+  padding: 0;
+  margin-right: 10px;
+  font-size: 0;
+  overflow: hidden;
+}
+.gi-img img {
+  width: 50px;
+  height: 50px;
+}
+.gi-name {
+  float: left;
+  text-align: left;
+  width: 120px;
+  height: 52px;
+  overflow: hidden;
+}
+.gi-name a:hover {
+  color: #ea3845;
+}
+.gi-detail {
+  float: right;
+  text-align: right;
+  overflow: hidden;
+}
+.gi-detail a:hover {
+  color: #ea3845;
+}
+.goodsFooter {
+  padding: 8px;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+.gid-price {
+  font-weight: 700;
+  overflow: hidden;
+}
+.toShoppingcart {
+  float: right;
+  height: 29px;
+  padding: 0 10px;
+  background-color: #c81623;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  line-height: 29px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+}
+.gF-mount {
+  float: left;
+  line-height: 29px;
+}
+.hotwords {
+  overflow: hidden;
+  position: absolute;
+  left: 320px;
+  top: 65px;
+  width: 550px;
+  height: 20px;
+  line-height: 20px;
+}
+.hotwords a {
+  white-space: nowrap;
+  margin-right: 10px;
+  color: #999;
+}
+/* toolbar */
+.toolbar-line {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  z-index: 999;
+  border-right: 6px solid #7a6e6e;
+}
+.toolbar {
+  position: fixed;
+  top: 50%;
+  right: 4px;
+  width: 34px;
+  z-index: 998;
+  margin-top: -61px;
+}
+.toolbar-tab {
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  line-height: 40px;
+  background-color: #7a6e6e;
+  margin: 1px 0;
+  cursor: pointer;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
+}
+.toolbar-tab:hover {
+  background-color: #c81623;
+}
+.toolbar i,
+.toolbar-footer i {
+  color: #fff;
+  font-size: 1.8rem;
+}
+.tab-text {
+  width: 62px;
+  height: 34px;
+  line-height: 34px;
+  color: #fff;
+  text-align: center;
+  font-family: "微软雅黑";
+  position: absolute;
+  z-index: -1;
+  left: 30px;
+  background-color: #7a6e6e;
+  -webkit-border-radius: 2px 0 0 2px;
+  -moz-border-radius: 2px 0 0 2px;
+  border-radius: 2px 0 0 2px;
+  -webkit-transition: left 0.3s ease-in-out 0.1s;
+  -moz-transition: left 0.3s ease-in-out 0.1s;
+  transition: left 0.3s ease-in-out 0.1s;
+}
+.toolbar-tab:hover .tab-text {
+  left: -60px;
+  background-color: #c81623;
+}
+.toolbar-footer {
+  position: fixed;
+  bottom: 0;
+  right: 4px;
+  width: 34px;
+  z-index: 998;
+}
+/* footer */
+footer {
+  height: 500px;
+  background-color: #dddddd;
+}
+.footer-service {
+  padding: 30px 0;
+  margin: auto;
+  border-bottom: 1px solid #bbbbbb;
+  background-color: #dddddd;
+}
+.footer-s-list {
+  overflow: hidden;
+  height: 42px;
+}
+.footer-s-item {
+  float: left;
+  width: 297px;
+  text-align: center;
+}
+.footer-s-txt {
+  overflow: hidden;
+  width: 100%;
+  height: 42px;
+  line-height: 42px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #555555;
+}
+.footer-help {
+  padding: 20px 0;
+  margin: auto;
+  background-color: #dddddd;
+}
+.footer-h-list {
+  overflow: hidden;
+  height: 160px;
+}
+.footer-h-nav {
+  float: left;
+  width: 198px;
+  line-height: 22px;
+}
+.footer-h-nav-tit {
+  margin-bottom: 5px;
+  color: #777777;
+  font-size: 1.4rem;
+}
+.footer-h-other {
+  float: right;
+  width: 200px;
+  height: 150px;
+}
+.footer-h-other-tit {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #777777;
+}
+.footer-h-other-con {
+  padding: 0 10px;
+}
+.footer-h-other-more {
+  text-align: right;
+}
+.footer-copyright {
+  padding: 15px 0;
+  border-top: 1px solid #bbbbbb;
+  margin: auto;
+  text-align: center;
+  background-color: #dddddd;
+}
+.footer-c-info {
+  padding: 10px 0;
+  line-height: 14px;
+  color: #999;
+}
+.footer-c-info a {
+  color: #999;
+}

@@ -1,0 +1,846 @@
+@charset "UTF-8";
+html {
+  height: 100%; }
+
+body {
+  font-family: "Microsoft YaHei";
+  min-height: 100%;
+  position: relative; }
+
+.wrap {
+  min-width: 1280px; }
+
+.container {
+  width: 1280px; }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+h1, h2, h3, h4, h5, h6, p, input, textarea {
+  margin: 0;
+  padding: 0; }
+
+a:focus {
+  outline: 0 none; }
+
+.header-login-rukou {
+  color: #f2f2f2; }
+
+.header-login-line {
+  display: inline-block;
+  width: 20px;
+  text-align: center; }
+
+.header-login-dengluzhuce, .header-login-guanzhu, .header-login-name {
+  height: 25px;
+  line-height: 25px;
+  color: #525252;
+  position: relative; }
+  .header-login-dengluzhuce a, .header-login-dengluzhuce a:hover, .header-login-dengluzhuce a:focus, .header-login-guanzhu a, .header-login-guanzhu a:hover, .header-login-guanzhu a:focus, .header-login-name a, .header-login-name a:hover, .header-login-name a:focus {
+    color: #525252;
+    text-decoration: none;
+    border: none; }
+
+.vip-user {
+  display: inline-block;
+  width: 55px;
+  height: 14px;
+  background: url("../../page/imgs/authed.png") no-repeat center 0;
+  margin-bottom:-2px;
+  margin-left: 5px; }
+
+.auditing-user {
+  display: inline-block;
+  width: 55px;
+  height: 14px;
+  background: url("../../page/imgs/authing.png") no-repeat center 0;
+  margin-bottom:-2px;
+  margin-left: -5px; 
+  margin-right: -10px;}
+
+.header-login-kehuduan {
+  height: 25px;
+  line-height: 25px;
+  position: relative;
+  margin-right: 20px; }
+
+.kehuduantext, .kehuduantext:hover, .kehuduantext:focus {
+  padding-left: 20px;
+  display: block;
+  background: url("../../page/imgs/phone.png") no-repeat left center;
+  color: #5f6060;
+  text-decoration: none; }
+
+.header-login-name {
+  display: none; }
+
+.sanjiao-up-border, .sanjiao-up-content {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px; }
+
+.sanjiao-up-border {
+  border-color: transparent transparent #BCBCBC transparent; }
+
+.sanjiao-up-content {
+  border-color: transparent transparent #fff transparent;
+  position: relative;
+  top: -9px; }
+
+.header-login-kehuduan-box {
+  z-index: 999;
+  width: 132px;
+  height: 130px;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #BCBCBC;
+  position: absolute;
+  right: -38px;
+  top: 41px;
+  -webkit-transition: opacity .5s;
+  -moz-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
+  display: none; }
+  .header-login-kehuduan-box img {
+    background: red;
+    width: 120px;
+    height: 120px;
+    float: left; }
+  .header-login-kehuduan-box .sanjiao-up {
+    position: absolute;
+    left: 55px;
+    top: -10px; }
+
+.header-login-kehuduan-box.active {
+  display: block; }
+
+.header-nav-bottom {
+  height: 35px;
+  background: #e6f2fe;
+  border-left: none;
+  border-right: none; }
+
+.header-nav-bottom-list-i {
+  margin-top: 11px;
+  height: 14px;
+  border-right: 1px solid #5e5e5e;
+  padding: 0 20px; }
+  .header-nav-bottom-list-i a {
+    display: block;
+    line-height: 14px;
+    color: #5e5e5e;
+    font-size: 14px; }
+  .header-nav-bottom-list-i a:hover, .header-nav-bottom-list-i a:focus {
+    text-decoration: none;
+    color: #063fab; }
+
+.header-nav-bottom-list-i.active a {
+  text-decoration: none;
+  color: #063fab; }
+
+.header-nav-bottom-list-i:last-child {
+  border: none; }
+
+.header-nav {
+  background: #0b3b9d; }
+
+.header-nav-list-i a {
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  height: 56px;
+  line-height: 56px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none; }
+.header-nav-list-i a:hover {
+  /*渐变色*/
+  background: #0a2171;
+  background: -moz-linear-gradient(top, #0a2171, #0b3b9d);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(#0a2171), color-stop(#0b3b9d));
+  background: -webkit-linear-gradient(top, #0a2171, #0b3b9d);
+  background: -o-linear-gradient(top, #0a2171, #0b3b9d);
+  background: -ms-linear-gradient(top, #0a2171, #0b3b9d);
+  background: linear-gradient(to bottom, #0a2171, #0b3b9d);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$x', endColorstr='$y',GradientType=0 ); }
+  .header-nav-list-i a:hover :root .gradient {
+    filter: none; }
+.header-nav-list-i :root .a {
+  filter: none; }
+
+.header-nav-list-i.current a {
+  /*渐变色*/
+  background: #0a2171;
+  background: -moz-linear-gradient(top, #0a2171, #0b3b9d);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(#0a2171), color-stop(#0b3b9d));
+  background: -webkit-linear-gradient(top, #0a2171, #0b3b9d);
+  background: -o-linear-gradient(top, #0a2171, #0b3b9d);
+  background: -ms-linear-gradient(top, #0a2171, #0b3b9d);
+  background: linear-gradient(to bottom, #0a2171, #0b3b9d);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$x', endColorstr='$y',GradientType=0 ); }
+  .header-nav-list-i.current a :root .gradient {
+    filter: none; }
+.header-nav-list-i.current :root .a {
+  filter: none; }
+
+.header-nav .header-login-rukou a, .header-nav .header-login-rukou span {
+  color: #fff; }
+.header-nav .header-login-rukou .kehuduantext, .header-nav .header-login-rukou .kehuduantext:hover, .header-nav .header-login-rukou .kehuduantext:focus {
+  background: url("../../page/imgs/phone_common.png") no-repeat left center; }
+.header-nav .header-nav-bottom-list {
+  margin-left: 150px; }
+
+.header-login-common {
+  margin-top: 15px; }
+
+.header-logo-common {
+  margin: 2px 30px 0 0; }
+  .header-logo-common a {
+    display: block;
+    width: 120px;
+    height: 50px; }
+    .header-logo-common a img {
+      display: block;
+      width: 100%;
+      height: 100%; }
+
+.search-block {
+  border: 1px solid #dfdfdf;
+  height: 32px;
+  background: #fff !important;
+  border-radius: 4px !important; }
+
+.search-input {
+  width: 330px;
+  height: 30px;
+  padding: 5px;
+  font-size: 12px;
+  border: 0;
+  color: #333;
+  background: none;
+  border-radius: 4px !important; }
+
+.search-btn {
+  color: #bcbcbc !important;
+  font-size: 16px !important;
+  background: #fff !important;
+  height: 30px;
+  width: 35px;
+  line-height: 30px !important;
+  text-align: center;
+  border-radius: 4px !important; }
+
+.search-btn:hover, .search-btn:focus {
+  color: #0b62b6 !important; }
+
+input:focus {
+  outline: none; }
+
+.search-icon {
+  font-size: 16px !important; }
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #333333;
+  height: 195px; }
+
+.footer-friendlink {
+  color: #ccc;
+  margin: 22px 0 20px;
+  height: 20px; }
+
+.footer-friendlink-title {
+  display: inline-block;
+  font-size: 15px; }
+
+.footer-friendlink-l {
+  width: 1200px; }
+
+.footer-friendlink-i {
+  margin-right: 25px; }
+
+.footer-friendlink-i-text, .footer-friendlink-i-text:hover {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 20px; }
+
+.footer-line {
+  width: 100%;
+  height: 1px;
+  background: #999;
+  margin-bottom: 20px; }
+
+.footer-nav-i {
+  padding-left: 20px; }
+
+.footer-nav-i-text, .footer-nav-i-text:hover {
+  color: #ccc;
+  font-size: 14px;
+  text-decoration: none;
+  display: block;
+  line-height: 35px; }
+
+.footer-nav-i.first {
+  border-left: 1px solid #999; }
+
+.footer-information {
+  margin-left: 100px; }
+
+.footer-information-text {
+  padding-left: 20px;
+  color: #999;
+  font-size: 12px;
+  height: 35px;
+  line-height: 35px; }
+
+.footer-information-text.first {
+  border-left: 1px solid #999; }
+
+.footer-balink {
+  color: #999; }
+
+.footer-balink:hover, .footer-balink:focus {
+  color: #999;
+  text-decoration: none; }
+
+.footer-ba {
+  display: inline-block;
+  margin: -2px 3px 0 4px; }
+
+.icourse-right-tools {
+  display: none;
+  position: fixed;
+  right: 10px;
+  bottom: 121px;
+  absolute: relative; }
+
+.icourse-right-tools-icons {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* IE9、标准浏览器、IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂 */
+  border: 1px solid #BCBCBC;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px; }
+
+.kehuduan-download {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: url("../imgs/tool_mobile.png") no-repeat center center;
+  border-bottom: 1px solid #BCBCBC; }
+
+.kehuduan-download:hover {
+  background: url("../imgs/tool_mobile_hover.png") no-repeat center center; }
+
+.icon-upbtn {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: url("../imgs/tool_top_arrow.png") no-repeat center center; }
+
+.icon-upbtn:hover {
+  background: url("../imgs/tool_top_arrow_hover.png") no-repeat center center; }
+
+@media \0screen\, screen\9 {
+  /* 只支持IE6、7、8 */
+  .icourse-right-tools-icons {
+    background-color: #ffffff;
+    filter: Alpha(opacity=70);
+    position: static;
+    /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+    *zoom: 1;
+    /* 激活IE6、7的haslayout属性，让它读懂Alpha */ } }
+.index-tool-kehuduan-box {
+  width: 132px;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #BCBCBC;
+  position: absolute;
+  right: 61px;
+  -webkit-transition: opacity .5s;
+  -moz-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
+  display: none; }
+  .index-tool-kehuduan-box img {
+    background: red;
+    width: 120px;
+    height: 120px;
+    display: inline-block; }
+
+.index-tool-kehuduan-box.active {
+  display: block; }
+
+.sanjiao-left {
+  top: 21px;
+  left: 100%;
+  position: absolute; }
+
+.sanjiao-left-border {
+  border-color: transparent transparent transparent #BCBCBC; }
+
+.sanjiao-left-content {
+  border-color: transparent transparent transparent #fff;
+  position: relative;
+  top: -20px;
+  left: -1px; }
+
+.sanjiao-left-border, .sanjiao-left-content {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0px 10px 10px; }
+
+.icourse-title-content {
+  color: #666;
+  top: -10px;
+  width: 100%;
+  padding: 30px 0; }
+
+.jingpin-mooc-t-box {
+  height: 18px;
+  background: #fff; }
+
+.jingpin-mooc-color {
+  width: 4px;
+  height: 18px;
+  background: #99cc00;
+  margin-right: 10px; }
+
+.jingpin-mooc-t {
+  height: 18px;
+  line-height: 18px;
+  font-size: 18px;
+  padding-right: 30px; }
+
+.jingpin-mooc-m {
+  display: block;
+  width: 90px;
+  background: #fff;
+  color: #666;
+  font-size: 14px;
+  height: 18px;
+  line-height: 18px;
+  text-align: right; }
+
+.jingpin-mooc-m:hover {
+  text-decoration: none; }
+
+.icourse-img {
+  height: 134px;
+  position: relative;
+  border: 1px solid #e4e4e4; }
+  .icourse-img .icourse-type {
+    position: absolute;
+    width: 100%;
+    z-index: 10; }
+  .icourse-img > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+    .icourse-img > a img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      transition: all .3s;
+      -moz-transition: all .3s;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s; }
+
+.icourse-desc {
+  height: 65px;
+  color: #333;
+  font-size: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e4e4e4;
+  border-top: none;
+  padding: 3px 12px; }
+
+.icourse-desc-top {
+  height: 35px;
+  line-height: 35px;
+  font-size: 13px; }
+
+.icourse-desc-title {
+  display: block;
+  color: #333;
+  font-weight: bold;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.icourse-study {
+  display: none; }
+
+.icourse-desc-school {
+  font-weight: bold;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.icourse-desc-title:hover, .icourse-desc-title:hover {
+  text-decoration: underline;
+  color: #333; }
+
+.icourse-desc-bottom {
+  color: #999; }
+
+.icourse-item-modulebox:hover img {
+  transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -moz-transform: scale(1.2); }
+
+.icourse-item-modulebox.mooc-item .icourse-desc-bottom {
+  color: #999; }
+  .icourse-item-modulebox.mooc-item .icourse-desc-bottom .icourse-desc-school {
+    width: 60%; }
+  .icourse-item-modulebox.mooc-item .icourse-desc-bottom .icourse-study {
+    display: block; }
+  .icourse-item-modulebox.mooc-item .icourse-desc-bottom span {
+    display: inline-block; }
+
+.show-block, .show-line {
+  display: block;
+  width: 30px;
+  height: 30px; }
+
+.show-block {
+  background: url("../../page/imgs/show_block_icon.jpg") no-repeat center center; }
+
+.show-line {
+  background: url("../../page/imgs/show_line_icon.jpg") no-repeat center center; }
+
+.show-block:hover {
+  background: url("../../page/imgs/show_block_icon_h.jpg") no-repeat center center; }
+
+.show-line:hover {
+  background: url("../../page/imgs/show_line_icon_h.jpg") no-repeat center center; }
+
+.search-sort-l.active .show-block {
+  background: url("../../page/imgs/show_block_icon_h.jpg") no-repeat center center; }
+.search-sort-l.active .show-line {
+  background: url("../../page/imgs/show_line_icon_h.jpg") no-repeat center center; }
+
+.icourse-list {
+  height: 180px;
+  width: 100%;
+  padding: 10px; }
+
+.icourse-list-img {
+  width: 278px;
+  height: 158px;
+  overflow: hidden;
+  margin-right: 30px;
+  position: relative; }
+  .icourse-list-img .icourse-type {
+    position: absolute;
+    width: 100%;
+    z-index: 10; }
+
+.icourse-list-img-in {
+  display: block;
+  width: 100%;
+  height: 100%; }
+  .icourse-list-img-in img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s; }
+
+.icourse-list-content {
+  width: 945px;
+  font-size: 12px;
+  color: #666;
+  position: relative; }
+
+.quitStudy {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 80px;
+  height: 32px;
+  line-height: 32px;
+  background: #fff;
+  border: 1px solid #184eba;
+  color: #184eba;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 6px;
+  text-decoration: none; }
+
+.icourse-list-content-title {
+  margin-bottom: 15px; }
+
+.icourse-list-content-title-text, .icourse-list-content-title-text:hover, .icourse-list-content-title-text:focus {
+  font-size: 16px;
+  color: #333333;
+  text-decoration: none;
+  margin-top: 2px; }
+
+.icourse-list-content-information {
+  margin-bottom: 15px;
+  line-height: 12px;
+  color: #999999; }
+
+.icourse-list-i {
+  float: left;
+  margin-right: 50px;
+  color: #999999; }
+  .icourse-list-i span {
+    display: inline-block;
+    float: left; }
+
+.icourse-list-content-state {
+  color: #999999; }
+
+.icourse-list-number {
+  display: inline-block;
+  padding-left: 15px;
+  color: #999999;
+  background: url("../../page/imgs/sort-num_gray.jpg") no-repeat center left; }
+
+.icourse-list-number-comment {
+  display: inline-block;
+  padding-left: 18px;
+  margin-left: 20px;
+  color: #999999;
+  background: url("../../page/imgs/sort-num-comment.png") no-repeat center left; }
+
+.icourse-list-content-text {
+  font-size: 14px;
+  height: 58px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  color: #666666; }
+
+.icourse-item-modulebox:hover img {
+  transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -moz-transform: scale(1.2); }
+
+.icourse-list-state {
+  padding-left: 20px;
+  margin: 0 25px; }
+
+.icourse-list-state.already {
+  color: #55b929;
+  background: url("../../page/imgs/state_green.png") no-repeat center left; }
+
+.icourse-list-state.notBegin {
+  color: #ffac59;
+  background: url("../../page/imgs/state_yellow.png") no-repeat center left; }
+
+.bbs-larPagination {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 12px; }
+  .bbs-larPagination .larPagination-i {
+    color: #333;
+    border: 1px solid #ddd;
+    display: inline-block;
+    padding: 0 12px;
+    line-height: 32px;
+    margin-right: 5px;
+    background: #fff;
+    border-radius: 4px; }
+  .bbs-larPagination input.larPagination-i.fy-input {
+    width: 35px;
+    line-height: 32px;
+    text-align: center;
+    padding: 0; }
+  .bbs-larPagination .larPagination-i.fy-go {
+    padding: 0 5px;
+    background: #2385b5;
+    color: #fff; }
+  .bbs-larPagination .current {
+    background: #2385b5;
+    color: #fff; }
+  .bbs-larPagination .disabled {
+    color: #999;
+    background: #eee; }
+  .bbs-larPagination a {
+    color: #333;
+    font-size: 12px; }
+  .bbs-larPagination a:hover, .bbs-larPagination a:focus {
+    background: #2385b5;
+    color: #fff;
+    text-decoration: none; }
+  .bbs-larPagination .tzd {
+    margin-left: 10px; }
+
+.sort-wrap .title {
+  color: #0f0f0f;
+  font-weight: 700;
+  font-size: 14px;
+  margin-right: 20px;
+  line-height: 28px; }
+.sort-wrap a {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 28px;
+  color: #0f0f0f;
+  text-decoration: none;
+  margin-right: 20px; }
+.sort-wrap a:hover, .sort-wrap a:focus {
+  color: #0b3b9d; }
+.sort-wrap .sort-type-i.active a {
+  color: #0b3b9d; }
+.sort-wrap .type-i {
+  border-bottom: 1px solid #edf1f2;
+  padding: 18px 0; }
+  .sort-wrap .type-i ul {
+    width: 1170px; }
+.sort-wrap .content-infor {
+  color: #0f0f0f;
+  padding: 18px 0;
+  font-size: 18px;
+  line-height: 32px; }
+  .sort-wrap .content-infor a.search-btn {
+    margin-right: 0;
+    color: #0b62b6; }
+  .sort-wrap .content-infor .search-sort-nav {
+    margin-left: 10px; }
+  .sort-wrap .content-infor .search-sort-l {
+    float: left;
+    margin-left: 10px; }
+    .sort-wrap .content-infor .search-sort-l a {
+      margin-right: 0; }
+  .sort-wrap .content-infor .search-input {
+    width: 330px; }
+
+.icourse-video-panel {
+  padding: 40px 0;
+  background-color: #f5f6f8; }
+
+.icourse-video-list > li {
+  width: 236px;
+  margin-right: 25px;
+  margin-bottom: 30px; }
+.icourse-video-list > li.last {
+  margin-right: 0px; }
+
+.icourse-video-panel1 {
+  padding: 40px 0 10px 0;
+  background-color: #f5f6f8; }
+
+.icourse-video-list1 > li {
+  width: 236px;
+  margin-right: 25px;
+  margin-bottom: 30px; }
+  .icourse-video-list1 > li .icourse-img {
+    height: 134px;
+    position: relative;
+    border: 1px solid #e4e4e4; }
+    .icourse-video-list1 > li .icourse-img .icourse-type {
+      position: absolute;
+      width: 100%;
+      z-index: 10; }
+    .icourse-video-list1 > li .icourse-img > a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; }
+      .icourse-video-list1 > li .icourse-img > a img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        transition: all .3s;
+        -moz-transition: all .3s;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s; }
+  .icourse-video-list1 > li .icourse-desc {
+    height: 80px;
+    color: #333;
+    font-size: 12px;
+    background-color: #ffffff;
+    border: 1px solid #e4e4e4;
+    border-top: none;
+    padding: 3px 12px; }
+  .icourse-video-list1 > li .icourse-desc-top {
+    height: 35px;
+    line-height: 35px;
+    font-size: 13px; }
+  .icourse-video-list1 > li .icourse-desc-title {
+    display: block;
+    color: #333;
+    font-weight: bold;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .icourse-video-list1 > li .icourse-study {
+    display: none; }
+  .icourse-video-list1 > li .icourse-desc-school {
+    font-weight: bold;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .icourse-video-list1 > li .icourse-desc-title:hover, .icourse-video-list1 > li .icourse-desc-title:hover {
+    text-decoration: underline;
+    color: #333; }
+  .icourse-video-list1 > li .icourse-desc-bottom {
+    color: #999; }
+  .icourse-video-list1 > li .icourse-item-modulebox:hover img {
+    transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -moz-transform: scale(1.2); }
+  .icourse-video-list1 > li .icourse-item-modulebox.mooc-item .icourse-desc-bottom {
+    color: #999; }
+    .icourse-video-list1 > li .icourse-item-modulebox.mooc-item .icourse-desc-bottom .icourse-desc-school {
+      width: 60%; }
+    .icourse-video-list1 > li .icourse-item-modulebox.mooc-item .icourse-desc-bottom .icourse-study {
+      display: block; }
+    .icourse-video-list1 > li .icourse-item-modulebox.mooc-item .icourse-desc-bottom span {
+      display: inline-block; }
+.icourse-video-list1 > li.last {
+  margin-right: 0px; }
+
+.icourse-video-panel2 {
+  padding: 40px 0 30px 0;
+  background-color: #f5f6f8; }
+
+.icourse-video-list-i {
+  border-bottom: 1px solid #e6e6e6; }
+
+.icourse-video-list-i:hover .icourse-list {
+  background: #fff; }
+.icourse-video-list-i:hover .icourse-list-number {
+  background: url("../../page/imgs/sort-num.jpg") no-repeat center left; }
+
+.tab-content-box {
+  background: #f5f6f8;
+  padding-bottom: 240px; }
+
+.noContent-box {
+  background: url("../imgs/noContent_common.png") no-repeat center 100px;
+  min-height: 400px;
+  margin-bottom: 30px;
+  display: none; }
+
+.noContent-box.active {
+  display: block; }
+
+/*# sourceMappingURL=courseVideo.css.map */

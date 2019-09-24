@@ -1,0 +1,336 @@
+.main-title {
+  padding: 10px 20px 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+.mt-txt {
+  padding: 10px 0 0;
+  display: block;
+}
+.mt-txt h3 {
+  font-size: 1.2rem;
+  color: #555555;
+  font-family: '\5b8b\4f53';
+  line-height: 18px;
+  float: left;
+}
+.main-con {
+  position: relative;
+  padding: 10px 20px 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+/* 订单主体头 */
+.mc-head {
+  padding: 10px 0;
+  display: block;
+}
+.mc-head li {
+  padding-right: 20px;
+  float: left;
+}
+.mc-head li a {
+  display: inline-block;
+  vertical-align: middle;
+  padding-bottom: 2px;
+  color: #000;
+}
+.mc-head li a:hover {
+  color: #ea3845;
+}
+.mc-head li .curr {
+  padding-bottom: 0;
+  color: #ea3845;
+  border-bottom: 2px solid #ea3845;
+  font-weight: 700;
+  cursor: pointer;
+}
+li.fore2 {
+  padding-left: 40px;
+  margin-left: 20px;
+  position: relative;
+  border-left: 1px dotted #dddddd;
+}
+/* 搜索框 */
+.mc-search {
+  position: relative;
+  top: -3px;
+}
+.mc-search > input {
+  float: left;
+  width: 158px;
+  height: 18px;
+  line-height: 18px;
+  padding: 2px 5px 3px;
+  border: 1px solid #bbbbbb;
+}
+.search-btn {
+  position: relative;
+  float: left;
+  width: 52px;
+  height: 23px;
+  line-height: 23px;
+  overflow: hidden;
+  border: 1px solid #dddddd;
+  border-left: 0;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+.high-search {
+  float: left;
+  margin-left: -1px;
+  width: 50px;
+  height: 18px;
+  line-height: 18px;
+  padding: 2px 0 3px;
+  text-align: center;
+  border: 1px solid #dddddd;
+  background-color: #f5f5f5;
+  color: #000;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
+}
+/* 高级选择 */
+.top-search {
+  position: relative;
+  padding: 20px 0 10px;
+  margin: 5px 0 0;
+  border-top: 1px solid #f5f5f5;
+  z-index: 1;
+}
+.top-search .dl {
+  display: block;
+  margin-bottom: 15px;
+  position: relative;
+}
+.top-search .label {
+  float: left;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  color: #555555;
+}
+.top-search .dd {
+  width: 945px;
+  float: left;
+  font-size: 0;
+}
+.top-search .dd a {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 8px;
+  margin: 0 1px 5px 0;
+  height: 30px;
+  line-height: 30px;
+  font-size: 1.2rem;
+  color: #555555;
+}
+.top-search .dd a:hover {
+  background: #ea3845;
+  color: #fff;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
+}
+.top-search .dd .curr {
+  background: #ea3845;
+  color: #fff;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
+}
+.top-search .returnBtn {
+  background-color: #f5f5f5;
+  border: 1px solid #dddddd;
+  color: #000;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
+  width: 85px;
+  text-align: center;
+  padding: 5px 30px;
+}
+.top-search .returnBtn:hover {
+  border-color: #ea3845;
+  background-color: #fff;
+  color: #ea3845;
+}
+.top-search .icon-remove {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  top: 10px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  border: 3px solid #bbbbbb;
+  color: #bbbbbb;
+  text-align: center;
+  -webkit-border-radius: 50% 50% 50% 50%;
+  -moz-border-radius: 50% 50% 50% 50%;
+  border-radius: 50% 50% 50% 50%;
+  line-height: 18px;
+}
+.top-search .icon-remove:hover {
+  color: #ea3845;
+  border-color: #ea3845;
+}
+#paind {
+  padding-left: 36px;
+  color: #777777;
+}
+#paind p:nth-child(1) {
+  text-indent: -36px;
+}
+.sale-filter {
+  display: block;
+  padding: 10px 10px 0;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+}
+.filter-lcol .dl {
+  display: block;
+  font-size: 0;
+}
+.filter-lcol .dt {
+  margin-right: 10px;
+  border-right: 1px dotted #bbb;
+}
+.filter-lcol .dt a {
+  margin-bottom: 0;
+}
+.filter-lcol a {
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  line-height: 18px;
+  padding: 5px 14px;
+  margin: 0 10px 10px 0;
+  border: 1px solid #bbb;
+  color: #555;
+  background-color: #fff;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+.filter-lcol a.curr,
+.filter-lcol a:hover {
+  padding: 4px 13px;
+  border: 2px solid #ea3845;
+  color: #ea3845;
+  background-color: #fff;
+}
+.filter-lcol .dd {
+  width: 870px;
+  height: 40px;
+  overflow: hidden;
+}
+.filter-more {
+  margin: 5px 0 0;
+  cursor: pointer;
+}
+.sale-selector {
+  display: block;
+  padding: 4px 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  margin-top: -1px;
+}
+.selector-lcol .dl {
+  float: left;
+  line-height: 30px;
+}
+.selector-lcol .dd {
+  float: left;
+  font-size: 0;
+}
+.selector-lcol .dd a {
+  display: inline-block;
+  margin-left: 20px;
+  vertical-align: middle;
+  font-size: 1.2rem;
+  color: #005ea7;
+}
+.selector-lcol .dd .curr {
+  color: #ea3845;
+}
+.sale-search-form {
+  position: relative;
+  float: right;
+  width: 211px;
+  height: 23px;
+  margin: 3px 0 0;
+  border: 1px solid #ddd;
+  font-size: 0;
+}
+.sale-search-form .itxt {
+  height: 100%;
+  padding-left: 10px;
+  border: none;
+  width: 172px;
+  font-size: 1.2rem;
+}
+.sale-search-btn {
+  position: absolute;
+  right: 10px;
+  top: 1px;
+  font-size: 1.4rem;
+  overflow: hidden;
+}
+.sale-goods-item {
+  float: left;
+  width: 160px;
+  height: 284px;
+  margin: 40px 50px 0 0;
+}
+.sale-goods-item:nth-child(5n) {
+  margin-right: 0;
+}
+.sale-goods-item .g-img {
+  width: 160px;
+}
+.sale-goods-item .g-img img {
+  max-width: 160px;
+  max-height: 160px;
+}
+.sale-goods-item .g-name {
+  height: 1.5rem;
+  line-height: 1.5rem;
+  margin: 5px 0;
+}
+.sale-goods-item .g-name a:hover {
+  color: #ea3845;
+}
+.sale-goods-item .g-price {
+  font: 20px/150% verdana;
+}
+.sale-goods-item .g-price strong {
+  font-weight: 400;
+}
+.sale-goods-item .g-price > span {
+  float: left;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 5px;
+  margin: 5px 3px 0;
+  background-color: #ea3845;
+  color: #fff;
+  font-size: 1.2rem;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+}
+.sale-goods-item .g-extra {
+  width: 160px;
+  overflow: hidden;
+  font-size: 0;
+  margin: 2px 0 0;
+}
+.sale-goods-item .g-name,
+.sale-goods-item .g-img,
+.sale-goods-item .g-price,
+.sale-goods-item .g-opbtns,
+.sale-goods-item .g-extra {
+  overflow: hidden;
+}

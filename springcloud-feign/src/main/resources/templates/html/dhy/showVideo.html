@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:c="c">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel = "icon" href = "../icons/favicon.ico" type = "image/x-icon">
+    <link rel = "stylesheet" type = "text/css" href = "../font/iconfont/iconfont.css">
+    <link rel = "stylesheet" href = "../css/normalize.css">
+    <link rel = "stylesheet" href = "../css/reset.css">
+    <link rel = 'stylesheet' href = "../css/common.css">
+    <link rel="stylesheet" href="../css/is-visible.css">
+    <link rel = "stylesheet" href = "../css/index.css">
+    <link rel = "stylesheet" href = "../css/wrap.css">
+    <link rel = "stylesheet" href = "../css/wrapper.css">
+
+    <script type="text/javascript" src="../djs/jquery.min.js"></script>
+</head>
+
+<body>
+
+　<c:forEach items="${mSol}" var="mSol">
+    <div class = 'pro-all clearfix' align="center">
+        <div class = 'fl phone-r'>
+            <ul  id="shouji1">
+
+                <div th:each="mmm:${v}">
+                    <li>
+                        <input type="hidden" th:value="${mmm.getVid()}" id="a">
+
+                        <a href="../front/pxiangQing?id=1"><video th:src="${mmm.getVideoUrl()}" controls='' autoplay='autoplay' style='max-width: 200%;'>111</video>
+                        </a>
+                        <div class='item-tit'>
+
+                            <!--<a href=\"\"><span th:text="${mmm.getVideoName()}" th:value="${mmm.getVideoName()}" type="hidden"></span></a>-->
+                       <p><span th:text="${mmm.getVideoName()}" th:value="${mmm.getVideoName()}" type="hidden"></span></p>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+</c:forEach>
+
+</body>
+</html>

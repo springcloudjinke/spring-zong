@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="UTF-8">
+
+    <!-- 引入jquery -->
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+
+    <!-- 引入bootstrap的css -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入bootstrap-treeview的css -->
+    <link href="../js/treeview/bootstrap-treeview.min.css" rel="stylesheet">
+    <!-- 引入bootstrap-addTabs的css -->
+    <link href="../js/addTabs/addTabs.css" rel="stylesheet">
+    <!-- 引入bootstrap-table的css -->
+    <link href="../js/table/bootstrap-table.min.css" rel="stylesheet">
+    <!-- 引入fileinput的css -->
+    <link type="text/css" rel="stylesheet" href="../js/fileinput/css/fileinput.min.css"/>
+    <!-- 引入my97 -->
+    <script type="text/javascript" src="../js/my97/WdatePicker.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="../js/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="../js/treeview/bootstrap-treeview.min.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="../js/addTabs/addTabs.js"></script>
+    <!-- 引入bootstrap-table的js-->
+    <script type="text/javascript" src="../js/table/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="../js/table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!-- 引入bootbox.js -->
+    <script type="text/javascript" src="../js/bootbox/bootbox.js"></script>
+    <!-- 引入fileinput的js -->
+    <script type="text/javascript" src="../js/fileinput/js/fileinput.min.js"></script>
+    <!--  引入fileinput的js -->
+    <script type="text/javascript" src="../js/fileinput/js/locales/zh.js"></script>
+
+    <script type="text/javascript" src="../js/fileinput/themes/fa/theme.js"></script>
+
+
+</head>
+<body>
+<form id="pro_from" class="form-inline">
+    <div class="form-group">
+        <label>学生账号:</label>
+        <input type="text" class="form-control" name = "account" id="account" placeholder="学生账号">
+    </div>
+
+    <button type="button" class="btn btn-success" onclick="queryData()">搜索</button>
+</form>
+
+<table id="dataGrid"></table>
+
+</body>
+
+<script>
+
+    $(function () {
+        //加载数据
+        initDataGrid();
+    })
+
+    function initDataGrid() {
+        //创建bootstrapTable
+
+
+        $("#dataGrid").bootstrapTable({
+            url: "../teac/queryStudentShow",
+            method: 'post',
+            striped: true,  	// 斑马线效果     默认false
+            //只允许选中一行
+            singleSelect: true,
+            //选中行是不选中复选框或者单选按钮
+            clickToSelect: true,
+            showToggle: true,                    //是否显示详细视图和列表视图的切换按钮
+            cardView: false,                    //是否显示详细视图
+            uniqueId: "id",                 //每一行的唯一标识，一般为主键列
+            showColumns: true,                  //是否显示所有的列
+            showRefresh: true,                  //是否显示刷新按钮
+            minimumCountColumns: 2,     //  最少留两列
+            detailView: false,                  //是否显示父子表
+            toolbar: '#tabToolBar',   //  工具定义位置
+            sidePagination: 'server',
+            toolbar: '#toolbar',
+            pagination: true, //是否展示分页
+            pageList: [2, 4, 8, 10],//分页组件
+            pageNumber: 1,
+            pageSize: 2,//默认每页条数
+            //启动回车键做搜索功能
+            searchOnEnterKey: true,
+            //设置为false 将禁止所有列的排序。
+            sortable: true,
+            //设置默认排序为 name
+            sortName: 'id',
+            //定义排序方式，'asc' 或者 'desc'。
+            sortOrder: "desc",
+            //设置为undefined可以获取pageNumber，pageSize，searchText，sortName，sortOrder
+            // 设置为limit可以获取limit, offset, search, sort, order  queryParamsType:'undefined',
+            queryParamsType: 'undefined',
+            // 请求服务器数据
+            queryParams: function queryParams(params) {
+                var param = {
+                    pageNumber: params.pageNumber,
+                    pageSize: params.pageSize,
+                    sortName: params.sortName,
+                    sortOrder: params.sortOrder,
+                    account: $("#account").val()
+                };
+                return param;
+            },
+            columns: [
+                {field: 'id', title: 'ID', width: 250},
+                {field: 'account', title: '账号', width: 250},
+                {field: 'nickname', title: '别名', width: 250},
+                {field: 'name', title: '真实姓名', width: 250},
+                {field: 'sex', title: '性别', width: 250,
+                    formatter:function(value,row,index){
+                        if(value==1){
+                            return "男";
+                        }else if(value==2){
+                            return "女";
+                        }
+                    }
+                },
+                {field: 'idCard', title: '身份证', width: 250},
+                {field: 'type', title: '类型', width: 250},
+                {field: 'qq', title: 'QQ号', width: 250},
+                {field: 'resume', title: '个人简历', width: 250},
+                {field: 'img', title: '头像', width: 250,
+                    formatter:function(value,row,index){
+                        return "<img src='"+value+"' width='50' height='50'>";
+                    }
+                },
+                {field: 'member', title: '会员', width: 250,
+                    formatter:function(value,row,index){
+                        if(value==1){
+                            return "会员";
+                        }else if(value==2){
+                            return "普通";
+                        }
+                    }
+                },
+                {field: 'memberDate', title: '开始日期', width: 250},
+                {field: 'memberTime', title: '结束日期', width: 250},
+               /* {field: 'cz', title: '操作', width: 250,
+                    formatter: function (value, row, index) {
+                                if(row.status==0){
+                                    var a = "<a href='javaScript:pass(\"" + row.teacherId + "\")'>审核通过</a>";
+                                    a += "   <br><a href='javaScript:refuse(\"" + row.teacherId + "\")'>审核拒绝</a>";
+
+                                    }else if(row.status==1){
+                                    var a= "<font color='red' size='4'>√</font>";
+                                 }else if(row.status==2){
+                                    var a= "<font color='red' size='5'>×</font>";
+                                  }
+                        return a;
+                    }
+                }*/
+
+            ]
+        });
+    }
+    function queryData(){
+        $("#dataGrid").bootstrapTable("refresh", {
+            "query": {
+                "account": $("#account").val(),
+            }
+        });
+    }
+
+    function refuse(id){
+        if (confirm("您确认要拒绝吗?")) {
+            $.ajax({
+                url: '../teac/refuse',
+                data: {id: id},
+                success: function () {
+                    $("#dataGrid").bootstrapTable("refresh");
+                }
+            });
+        }
+    }
+    function pass(id){
+        if (confirm("您确认要通过吗?")){
+            $.ajax({
+                url: '../teac/pass',
+                data: {id:id},
+                success: function () {
+                    $("#dataGrid").bootstrapTable("refresh");
+                }
+            });
+        }
+
+    }
+
+</script>
+</html>

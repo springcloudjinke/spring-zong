@@ -1,0 +1,147 @@
+@keyframes transi1 {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.transi1 {
+
+  animation: transi1 1s ease;
+  animation-duration: 1s, 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes transi2 {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.transi2 {
+
+  animation: transi2 1s ease;
+  animation-duration: 1s, 1s;
+  animation-delay: .5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes transi3 {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.transi3 {
+
+  animation: transi3 1s ease;
+  animation-duration: 1s, 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes transi4 {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.transi4 {
+
+  animation: transi4 1s ease;
+  animation-duration: 1s, 1s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes transi5 {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.transi5 {
+
+  animation: transi5 1s ease;
+  animation-duration: 1s, 1s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes transi6 {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.transi6 {
+
+  animation: transi6 1s ease;
+  animation-duration: 1s, 1s;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes transi7 {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.transi7 {
+
+  animation: transi7 1s ease;
+  animation-duration: 1s, 1s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes spread {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: .2;
+    filter: alpha(opacity=20) \9
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+    filter: alpha(opacity=0) \9
+  }
+}

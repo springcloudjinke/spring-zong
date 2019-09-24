@@ -1,0 +1,741 @@
+body {
+    min-width: 1226px;
+}
+
+/*全部商品分类导航区域*/
+.mi-h-menu {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-nav .nav-Category > a {
+    padding: 26px 0 38px;
+    text-align: right;
+    color: #333;
+    display: block;
+}
+
+.site-category {
+    background-color: #fff;
+    border: 1px solid #ff6700;
+    display: none;
+}
+
+.site-category a {
+    color: #333 !important;
+}
+
+.site-category a i {
+    color: #ccc !important;
+}
+
+.nav-Category:hover .site-category {
+    display: block;
+}
+
+/*小米电视头部区域*/
+.pro-header {
+    height: 63px;
+    line-height: 62px;
+}
+
+.pro-header .pro-name {
+    font-weight: 400;
+    font-size: 18px;
+    color: #212121;
+    width: 158px;
+    float: left;
+}
+
+.pro-header .pro-tit {
+    float: left;
+    line-height: 62px;
+}
+
+.xm-tvpro-header .pro-header {
+    font-size: 14px;
+}
+.pro-header a:hover {
+    color: #ff6700;
+}
+
+.pro-header .pro-tit .sep {
+    margin: 0 .25em;
+    color: #212121;
+}
+
+.pro-list .sep {
+    color: #e0e0e0;
+}
+
+.pro-list a {
+    color: #616161;
+}
+
+.pro-list .buy-pro {
+    display: inline-block;
+    color: #fff;
+    background-color: #ff6700;
+    width: 118px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    margin-left: 5px;
+    vertical-align: inherit;
+}
+
+.pro-list .buy-pro:hover {
+    color: #fff;
+    background-color: #f25807;
+}
+
+/*商品主体页面区域*/
+
+.section-pro {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-pro img {
+    width: 100%;
+    display: block;
+}
+
+.section-pro .text {
+    position: absolute;
+    top: 18%;
+    left: 12.5%;
+    color: #fff;
+}
+
+.section-pro .text .item1 {
+    font-size: .47em;
+    opacity: 0;
+}
+
+.item2 {
+    padding-top: 10px;
+}
+
+.section-pro .text .item2, .item3 {
+    font-size: 1.4em;
+    line-height: 1.2;
+    opacity: 0;
+}
+
+.section-pro .text .item4 {
+    padding-top: 0.8em;
+    opacity: 0;
+}
+
+.section-pro .text .item4 .sp1 {
+    font-size: .7em;
+}
+
+.section-pro .text .item4 .sp2 {
+    font-size: .38em;
+    text-decoration: line-through;
+}
+
+.section-pro .text .item4 .sp3 {
+    font-size: .32em;
+}
+
+.section-pro .text .item5 {
+    padding-top: 1.8em;
+    opacity: 0;
+}
+
+.section-pro .text .item5 .p1 {
+    font-size: .29em;
+    letter-spacing: 2.5px;
+}
+
+.section-pro .text .item5 .p2 {
+    font-size: .14em;
+    padding-top: 5px;
+    opacity: .6;
+}
+
+/*功能列表*/
+.section-info {
+    font-size: .48em;
+    color: #000;
+    padding: 0 8% 2em;
+}
+
+.section-info li {
+    float: left;
+    width: 33.3333%;
+    text-align: center;
+    padding-top: 1.8em;
+}
+
+.section-info li em {
+    font-size: 0.5em;
+    padding-top: 6px;
+    display: block;
+    font-weight: 300;
+}
+
+.section-info li {
+    opacity: 0;
+}
+
+.section-control {
+    background: url("../images/TVimg/control_bg.jpg") no-repeat center;
+    height: 9em;
+    background-size: cover;
+    padding-left: 2.85em;
+    padding-top: 2.45em;
+    position: relative;
+}
+
+.section-control .text-tit {
+    background: url("../images/TVimg/control_icon.png") no-repeat left;
+    background-size: contain;
+    font-size: .4em;
+    color: #fff;
+    font-weight: 400;
+    text-indent: 3.5em;
+    line-height: 3;
+    position: absolute;
+    opacity: 0;
+}
+
+/*文字轮播效果*/
+.text-show {
+    height: 270px;
+    position: absolute;
+    top: 5em;
+    overflow: hidden;
+}
+
+.text-show ul li {
+    opacity: 0.4;
+    font-size: .8em;
+    color: #fff;
+    height: 92px;
+}
+
+.wrap {
+    height: 70px;
+    position: relative;
+    top: 70px;
+}
+
+/*视频效果区域*/
+.section-video {
+    background-color: #010127;
+    padding: 0.4em;
+    position: relative;
+}
+
+.video-left {
+    width: 50%;
+    padding-right: .2em;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.video-left img {
+    width: 100%;
+    display: block;
+}
+
+.video-right {
+    width: 50%;
+    padding-left: .2em;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.video-right img {
+    width: 100%;
+    display: block;
+}
+
+.video-txt {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    color: #fff;
+    transform: translateX(-50%);
+    font-size: .4em;
+    text-align: center;
+    opacity: 0;
+    margin-left: -151px;
+}
+
+.video-txt i {
+    color: #fff;
+    font-size: 2em;
+
+}
+
+/*4k区域*/
+.picture-4k {
+    position: relative;
+    height: 12em;
+}
+
+.picture-4k .h-4k {
+    position: absolute;
+    left: 0;
+    background: url("../images/TVimg/4k_4k.jpg") top left no-repeat;
+    width: 100%;
+    background-size: 100% 100%;
+    height: 12em;
+}
+
+.picture-4k .l-4k {
+    width: 50%;
+}
+
+.l-4k {
+    position: absolute;
+    right: 0;
+    background: url("../images/TVimg/4k_1080p.jpg") top right no-repeat;
+    width: 100%;
+    background-size: auto 100%;
+    height: 12em;
+    border-left: 2px solid rgba(255, 255, 255, .5);
+    transition: width 2s;
+}
+
+.l-4k a {
+    display: block;
+}
+
+.gq-1080 {
+    border: 2px solid #fff;
+    border-radius: 10px;
+    width: 2.5em;
+    height: 1em;
+    line-height: 0.65em;
+    color: #fff;
+    text-align: center;
+    bottom: 60px;
+}
+
+.ar .gq-1080 {
+    position: absolute;
+    left: 75%;
+    margin-left: -0.5em;
+}
+
+.al .gq-1080 {
+    position: absolute;
+    left: 25%;
+    margin-left: -0.5em;
+}
+
+.gq-1080 i {
+    font-size: .6em;
+}
+
+/*hdr区域*/
+.hdr {
+    padding: .8em .88em 1.4em;
+}
+
+.hdr h2 {
+    font-weight: 400;
+    font-size: 0.65em;
+    text-align: center;
+    color: #000;
+    opacity: 0;
+}
+
+.hdr h5 {
+    font-weight: 200;
+    font-size: 0.3em;
+    text-align: center;
+    color: #000;
+    font-weight: 400;
+    padding-top: .8em;
+    opacity: 0;
+}
+
+/*audio区域*/
+.audio-show {
+    background: url("../img/db_bg.jpg") center no-repeat;
+    background-size: 100%;
+    height: 13.5em;
+    text-align: center;
+    position: relative;
+}
+
+.audio-show h3 {
+    padding-top: 1.6em;
+    font-size: 0.7em;
+    color: #fff;
+    font-weight: 400;
+    opacity: 0;
+}
+
+.audio-show p {
+    font-size: .36em;
+    color: #fff;
+    padding-top: .5em;
+    opacity: 0;
+}
+
+.audio-show .dts-hd {
+    background: url("../img/db_logo.png") no-repeat;
+    background-size: 100%;
+    width: 7.26em;
+    height: .43em;
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    margin-left: -3.16em;
+}
+
+/*轮播区域*/
+
+.carousel1 {
+    height: 12em;
+    position: relative;
+    text-align: center;
+}
+
+.carousel1 .imgs1 ul li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.carousel1 .imgs1 ul li img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel1 .imgs1 ul li:first-child {
+    display: block;
+}
+
+.carousel1 .btns1 a {
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    width: 30px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, .3);
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+    display: none;
+}
+
+.carousel1 .btns1 a.rightBtn1 {
+    right: 0px;
+}
+
+/*小圆点样式*/
+.carousel1 .circles1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1.4em;
+}
+
+.carousel1 .circles1 ol {
+    text-align: center;
+}
+
+.carousel1 .circles1 ol li {
+    width: 6em;
+    height: 2.8em;
+    border: 1px solid #fff;
+    float: left;
+    border-radius: 5px;
+    font-size: 0.4em;
+    margin-right: .2em;
+    line-height: 2.8em;
+    font-weight: 300;
+    color: #fff;
+}
+
+.carousel1 .circles1 ol li.cur1 {
+    background-color: #03b0e5;
+    border: 1px solid #03b0e5;
+}
+
+.text-content {
+    position: absolute;
+    color: #fff;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.text-content h2 {
+    font-size: .8em;
+    font-weight: 400;
+    padding-top: 1.1em;
+    opacity: 0;
+}
+
+.text-content p {
+    font-size: .31em;
+    padding-top: .4em;
+    opacity: 0;
+}
+
+/*cpu*/
+
+.cpu {
+    height: 12em;
+    background: url("../img/cpu.jpg") no-repeat center;
+    background-size: 100%;
+    position: relative;
+    text-align: center;
+}
+
+/*memor*/
+.memor {
+    height: 12em;
+    background: url("../img/memory.jpg") no-repeat center;
+    background-size: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.memor .m-app {
+    background: url("../img/memory_wrap.png") no-repeat center;
+    height: 7.15em;
+    width: 12.75em;
+    background-size: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*<!--超窄边，看片更沉浸-->*/
+.size {
+    height: 13.19em;
+    background: url("../img/size_bg.jpg") no-repeat center;
+    background-size: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.tv_proto {
+    width: 15.38em;
+    height: 9.72em;
+    position: absolute;
+    left: 56.5%;
+    margin-left: -7.67em;
+    bottom: 0;
+}
+
+.tv_proto .tv1_proto {
+    background: url("../img/size_tv.png") no-repeat center;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+}
+
+.tv_proto .tv2_proto {
+    background: url("../img/size_circle.png") no-repeat center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -31%;
+    left: -45%;
+    background-size: 21.5%;
+}
+
+/*<!--更丰富的接口-->*/
+.ins {
+    height: 12em;
+    background: url("../img/in_bg2.jpg") no-repeat center;
+    position: relative;
+    background-size: 100%;
+}
+
+.ins .text-content {
+    padding-left: 3.2em;
+    padding-top: .5em;
+    position: static;
+}
+
+.ins .text-content p {
+    max-width: 21em;
+    padding-top: .6em;
+}
+
+.ins .ins_wrap {
+    width: 7.3em;
+    padding-left: 3.2em;
+    padding-top: .2em;
+}
+
+.ins .ins_wrap li {
+    width: 2.15em;
+    height: 2em;
+    border: 1px solid #fff;
+    float: left;
+    margin-top: .2em;
+    margin-right: .2em;
+    text-align: center;
+    opacity: 0;
+}
+
+.ins .ins_wrap li span {
+    color: #fff;
+    font-size: .29em;
+    font-weight: 800;
+    line-height: 1em;
+}
+
+.ins .ins_wrap li p {
+    color: #fff;
+    font-size: .1em;
+}
+
+/*客厅图*/
+.room-wrap {
+    height: 12em;
+}
+
+/*vip*/
+.vip {
+    height: 9.95em;
+    background: url("../img/vip_bg.jpg") no-repeat center;
+    text-align: center;
+    color: #fff;
+}
+
+.vip .vip_wrap {
+    padding: 2.6em;
+}
+
+.vip .vip_wrap .vip_bgl {
+    background: url("../img/vip_icon.png") top no-repeat;
+    height: 1.2em;
+    width: 100%;
+    background-size: 4.91em .84em;
+}
+
+.vip .vip_wrap .vip_l {
+    width: 50%;
+    float: left;
+    padding: 1em;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
+.vip .vip_wrap .vip_r {
+    width: 50%;
+    float: right;
+    padding: 1em;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
+.vip .vip_wrap .vip_bgr {
+    background: url("../img/vip_icon2.png") top no-repeat;
+    height: 1.2em;
+    width: 100%;
+    background-size: 2.2em .84em;
+}
+
+.vip h2 {
+    font-size: .55em;
+    font-weight: 400;
+}
+
+.vip p {
+    font-size: .29em;
+    padding-top: 2em;
+}
+
+/*安装服务*/
+.builds {
+    height: 12em;
+    background: url("../img/install.jpg") no-repeat center;
+    background-size: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.builds p {
+    padding-bottom: .8em;
+}
+
+.builds p a {
+    color: #fff;
+}
+
+.hint {
+    padding: 1em;
+    position: relative;
+    text-align: center;
+}
+
+.hint .text-content {
+    color: #000;
+    position: relative;
+}
+
+.hint .tvshow {
+    background: url("../img/tips_img.jpg") center no-repeat;
+    width: 12.9em;
+    height: 4.14em;
+    background-size: 100%;
+    margin: 1.2em auto;
+}
+
+.builds .p1 {
+    opacity: .3;
+}
+
+.tv_exp {
+    padding: .8em 3.6em .8em;
+}
+
+.tv_exp p {
+    font-size: .18em;
+}
+
+/*二维码区域*/
+.f_att {
+    background-color: #fafafa;
+}
+
+.bjnews {
+    width: 613px;
+    /*background-color: red;*/
+    padding: 45px 0;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.bjnews img {
+    height: 100px;
+    width: 100px;
+    float: left;
+    margin: 0 35px 0 30px;
+}
+
+.bjnews .p1 {
+    float: left;
+    font-size: 2.3em;
+    color: #000;
+    padding-top: 20px;
+}
+
+.bjnews .p1 span {
+    color: red;
+}
+
+.bjnews .p2 {
+    float: left;
+    color: #000;
+    padding-top: 8px;
+}

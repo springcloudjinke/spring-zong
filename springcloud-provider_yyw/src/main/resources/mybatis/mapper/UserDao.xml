@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.dao.UserDao">
+
+    <select id="queryUserName" resultType="com.jk.model.User" parameterType="String">
+        select * from t_user where userName =#{userName}
+    </select>
+
+
+    <select id="getTreeAll" resultType="com.jk.model.Tree">
+        SELECT t.* from t_user u ,user_role ur ,t_role r,role_tree rt,tree t
+        where u.id = ur.userid
+        and ur.roleid = r.id
+        and r.id = rt.roleid
+        and rt.treeid = t.id
+        and u.id =#{id} GROUP BY t.text
+    </select>
+
+    <select id="queryZhanghao" resultType="com.jk.model.User">
+
+        select * from t_user
+        <include refid="cha2"></include>
+
+    </select>
+
+    <sql id="cha2">
+        <where>
+            <if test="userName!= null and userName !=''">
+                and userName like "%${userName}%"
+            </if>
+        </where>
+    </sql>
+
+
+    <select id="queryOrgAll3" resultType="com.jk.model.Tree">
+        select * from tree where pid = #{pid}
+    </select>
+
+    <select id="queryOrgAll2" resultType="com.jk.model.Tree">
+        select * from tree t,role_tree rt
+        where t.id= rt.treeid and rt.roleid= #{id} and t.pid=#{pid}
+    </select>
+
+    <insert id="insert" parameterType="com.jk.model.RoleTree" >
+
+        insert into role_tree (id, roleid, treeid)
+        values (#{id,jdbcType=INTEGER}, #{roleid,jdbcType=INTEGER}, #{treeid,jdbcType=INTEGER}
+        )
+    </insert>
+</mapper>

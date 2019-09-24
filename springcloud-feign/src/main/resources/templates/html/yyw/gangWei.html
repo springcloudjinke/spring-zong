@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="UTF-8">
+
+    <!-- 引入jquery -->
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+
+    <!-- 引入bootstrap的css -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入bootstrap-treeview的css -->
+    <link href="../js/treeview/bootstrap-treeview.min.css" rel="stylesheet">
+    <!-- 引入bootstrap-addTabs的css -->
+    <link href="../js/addTabs/addTabs.css" rel="stylesheet">
+    <!-- 引入bootstrap-table的css -->
+    <link href="../js/table/bootstrap-table.min.css" rel="stylesheet">
+    <!-- 引入fileinput的css -->
+    <link type="text/css" rel="stylesheet" href="../js/fileinput/css/fileinput.min.css"/>
+    <!-- 引入my97 -->
+    <script type="text/javascript" src="../js/my97/WdatePicker.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="../js/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="../js/treeview/bootstrap-treeview.min.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="../js/addTabs/addTabs.js"></script>
+    <!-- 引入bootstrap-table的js-->
+    <script type="text/javascript" src="../js/table/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="../js/table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!-- 引入bootbox.js -->
+    <script type="text/javascript" src="../js/bootbox/bootbox.js"></script>
+    <!-- 引入fileinput的js -->
+    <script type="text/javascript" src="../js/fileinput/js/fileinput.min.js"></script>
+    <!--  引入fileinput的js -->
+    <script type="text/javascript" src="../js/fileinput/js/locales/zh.js"></script>
+
+    <script type="text/javascript" src="../js/fileinput/themes/fa/theme.js"></script>
+
+</head>
+
+<table id="dataGrid"></table>
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- 头部 -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">&times;
+                </button>  <!-- X号关闭 -->
+                <h4 class="modal-title" id="myModalLabel">菜单信息</h4>
+            </div>
+            <!-- 中部   form内容设置  -->
+            <div id="jiaose">
+
+            </div>
+            <!-- 尾部 （按扭）-->
+            <div class="modal-footer">
+                <button type="button" onclick="tijiao()" class="btn btn-primary"> 提交更改</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+</div>
+
+</body>
+
+<script>
+
+    $(function () {
+
+        //加载数据
+        initDataGrid();
+
+    })
+
+    function initDataGrid() {
+        //创建bootstrapTable
+
+
+        $("#dataGrid").bootstrapTable({
+            url: "../user/queryRole",
+            method: 'post',
+            striped: true,  	// 斑马线效果     默认false
+            //只允许选中一行
+            singleSelect: true,
+            //选中行是不选中复选框或者单选按钮
+            clickToSelect: true,
+            showToggle: true,                    //是否显示详细视图和列表视图的切换按钮
+            cardView: false,                    //是否显示详细视图
+            uniqueId: "id",                 //每一行的唯一标识，一般为主键列
+            showColumns: true,                  //是否显示所有的列
+            showRefresh: true,                  //是否显示刷新按钮
+            minimumCountColumns: 2,     //  最少留两列
+            detailView: false,                  //是否显示父子表
+            toolbar: '#tabToolBar',   //  工具定义位置
+            sidePagination: 'server',
+            toolbar: '#toolbar',
+            pagination: true, //是否展示分页
+            pageList: [2, 4, 8, 10],//分页组件
+            pageNumber: 1,
+            pageSize: 2,//默认每页条数
+            //启动回车键做搜索功能
+            searchOnEnterKey: true,
+            //设置为false 将禁止所有列的排序。
+            sortable: true,
+            //设置默认排序为 name
+            sortName: 'id',
+            //定义排序方式，'asc' 或者 'desc'。
+            sortOrder: "desc",
+            //设置为undefined可以获取pageNumber，pageSize，searchText，sortName，sortOrder
+            // 设置为limit可以获取limit, offset, search, sort, order  queryParamsType:'undefined',
+            queryParamsType: 'undefined',
+            // 请求服务器数据
+            queryParams: function queryParams(params) {
+                var param = {
+                    pageNumber: params.pageNumber,
+                    pageSize: params.pageSize,
+                    sortName: params.sortName,
+                    sortOrder: params.sortOrder,
+                };
+                return param;
+            },
+            columns: [
+                {field: 'id', title: 'Id', width: 300},
+                {field: 'name', title: '角色名称', width: 300},      //  列    field   代表是 后台  传过来的值
+                {field: 'description', title: '等级', width: 300},
+                {
+                    field: 'cz', title: '操作', width: 300,
+                    formatter: function (value, row, index) {
+                        var a = "<a href='javaScript:ediTqx(\"" + row.id + "\")'>权限</a>";
+                        return a;
+                    }
+                }
+
+            ]
+        });
+    }
+
+
+    function xiangqing(id) {
+
+        //打开新增弹框
+        bootbox.dialog({
+            title: '新增用户',
+            message: createAddContent("../user/showXiangQing?id=" + id),
+            closeButton: true,//是否显示关闭按钮
+            buttons: {
+
+                "cancel": {
+                    "label": "<i class='icon-info'></i> 取消",
+                    "className": "btn-sm btn-danger",
+                    "callback": function () {
+
+                    }
+                }
+            }
+
+        });
+
+    }
+
+
+    var res;
+
+    function createAddContent(url) {
+        $.ajax({
+            url: url,
+            async: false,
+            success: function (data) {
+                res = data;
+            }
+        });
+        return res;
+    }
+
+    //权限
+    var roles;
+
+    function editTree(id) {
+        roles = id;
+        $.ajax({
+            url: "../user/queryTree?id=" + id,
+            type: "post",
+            success: function (data) {
+
+                $("#myModal2").modal("show");
+                //查询成功回调，tree展示
+                $("#jiaose").treeview({
+                    //data属性 树节点信息 json数组
+                    data: data,
+                    //是否显示复选框
+                    showCheckbox: true,
+                    checkedIcon: "glyphicon glyphicon-check",
+                })
+            },
+
+            error: function () {
+                alert("fail");
+            }
+        })
+    }
+
+    //获取选中id
+    function caidanid() {
+
+        var id = $("#jiaose").treeview("getChecked") //获取所选中的id
+        var ids = "";
+        for (var i = 0; i < id.length; i++) {
+            ids += "," + id[i].id;
+        }
+        var ids = ids.substr(1);
+        return ids;  //调用此方法时返回获得id
+    }
+
+    function tijiao() {
+        var ids = caidanid();
+
+        $.ajax({
+            url: "../user/updatePer",
+            type: "post",
+            data: {ids: ids, roleid: roles},
+            success: function () {
+                $('#myModal2').modal('hide'); //成功后关闭弹框
+            }
+        })
+    }
+
+
+    function ediTqx(id) {
+
+        bootbox.dialog({
+            title: '绑定权限',
+            message: createAddContent("../user/yywTree?id=" + id),
+            closeButton: true,//是否显示关闭按钮
+            buttons: {
+                "success": {
+                    "label": "<i class='icon-ok'></i> 保存",
+                    "className": "btn-sm btn-success",
+                    "callback": function () {
+                        var a = $('#editTree').treeview('getChecked');
+                        var ids = ""
+                        for (var i = 0; i < a.length; i++) {
+                            ids += "," + a[i].id
+                        }
+                        ids = ids.substring(1)
+
+                        $.ajax({
+                            url: "../user/updatetree",
+                            type: "post",
+                            data: {"roleid": $("#rid").val(), "ids": ids},
+                            success: function () {
+                                $('#myModal2').modal('hide'); //成功后关闭弹框
+                                $('#dataGrid').bootstrapTable("refresh");
+                            }
+                        })
+                    }
+                },
+                "cancel": {
+                    "label": "<i class='icon-info'></i> 取消",
+                    "className": "btn-sm btn-danger",
+                    "callback": function () {
+                    }
+                }
+            }
+        });
+    }
+
+
+</script>
+
+</html>

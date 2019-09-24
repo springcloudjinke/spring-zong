@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jk.mapper.VideowhDao">
+    <insert id="addTeacher" parameterType="com.jk.model.Teacher">
+        insert into t_teacher(teacherName,school,picture,videoType,idCard,idCardPhone,persionInfo,phone,experience,status)
+        values(#{teacherName},#{school},#{picture},#{videoType},#{idCard},#{idCardPhone},#{persionInfo},#{phone},#{experience},0)
+    </insert>
+    <update id="updData" parameterType="com.jk.model.Student">
+        update t_student set nickname=#{nickname},name=#{name},resume=#{resume} where id=#{id}
+    </update>
+</mapper>

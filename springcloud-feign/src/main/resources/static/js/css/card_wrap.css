@@ -1,0 +1,14 @@
+
+.m-app  .main .ri-grid ul {
+    padding: .9em;
+}
+
+.m-app  .main .ri-grid li{
+    float: left;
+    margin: .2em .32em ;
+}
+
+.m-app  .main .ri-grid li img {
+    width: 1.16em;
+    height: 1.16em;
+}

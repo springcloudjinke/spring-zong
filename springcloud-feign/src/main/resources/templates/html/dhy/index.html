@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 引入jquery -->
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+</head>
+
+</head>
+<body>
+<form id= "uploadForm">
+    <p >指定文件名： <input type="text" name="filename" value= ""/></p >
+    <p >上传文件： <input type="file" name="file"/></p>
+    <input type="button" value="上传" onclick="doUpload()" />
+</form>
+
+</body>
+
+<script type="text/javascript">
+    function doUpload() {
+        var formData = new FormData($( "#uploadForm" )[0]);
+        $.ajax({
+            url: 'http://localhost:8081/ftpuploadimg' ,
+            type: 'POST',
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (returndata) {
+                alert(returndata);
+            },
+            error: function (returndata) {
+                alert(returndata);
+            }
+        });
+    }
+</script>
+
+</html>

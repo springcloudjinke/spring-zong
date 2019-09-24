@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <!-- 引入jquery -->
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+
+    <!-- 引入bootstrap的css -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入bootstrap-treeview的css -->
+    <link href="../js/treeview/bootstrap-treeview.min.css" rel="stylesheet">
+    <!-- 引入bootstrap-addTabs的css -->
+    <link href="../js/addTabs/addTabs.css" rel="stylesheet">
+    <!-- 引入bootstrap-table的css -->
+    <link href="../js/table/bootstrap-table.min.css" rel="stylesheet">
+    <!-- 引入fileinput的css -->
+    <link type="text/css" rel="stylesheet" href="../js/fileinput/css/fileinput.min.css"/>
+    <!-- 引入my97 -->
+    <script type="text/javascript" src="../js/my97/WdatePicker.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="../js/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="../js/treeview/bootstrap-treeview.min.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="../js/addTabs/addTabs.js"></script>
+    <!-- 引入bootstrap-table的js-->
+    <script type="text/javascript" src="../js/table/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="../js/table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!-- 引入bootbox.js -->
+    <script type="text/javascript" src="../js/bootbox/bootbox.js"></script>
+    <!-- 引入fileinput的js -->
+    <script type="text/javascript" src="../js/fileinput/js/fileinput.min.js"></script>
+    <!--  引入fileinput的js -->
+    <script type="text/javascript" src="../js/fileinput/js/locales/zh.js"></script>
+
+    <script type="text/javascript" src="../js/fileinput/themes/fa/theme.js"></script>
+
+
+
+
+    <style type="text/css">
+
+        {
+            margin: 0;
+            padding: 0;
+        }
+
+        .login {
+            width: 400px;
+            height: 400px;
+            box-shadow: 0 0 15px 3px rgba(51, 51, 51, 0.53);
+            margin: 20px auto 0 auto;
+            /* border: 1px solid aqua; */
+            text-align: center;
+        }
+
+        #login-text,
+        #login-pwd {
+            width: 350px;
+            height: 30px;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #login-sub {
+            width: 364px;
+            height: 30px;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ----------样式设计---------- */
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .choose {
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 22px;
+        }
+
+        .left {
+            color: #f56600;
+            margin-right: 15px;
+        }
+
+        .right {
+            margin-left: 15px;
+        }
+
+        #login-text,
+        #login-pwd {
+            padding: 8px 5px;
+            font-size: 16px;
+            /* box-sizing: border-box; */
+            outline: none;;
+        }
+
+        #login-text {
+            margin-top: 35px;
+        }
+        #login-pwd {
+            margin-top: 15px;
+        }
+
+        #login-sub {
+            height: 50px;
+            margin-top: 15px;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            background-color: #ff0066;
+            color: white;
+        }
+
+        .forget {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 13px;
+            color: #e0e0e0;
+        }
+
+        .forget a {
+            color: #999;
+        }
+
+        .forget a:hover {
+            text-decoration: underline;
+        }
+
+        fieldset {
+            display: inline-block;
+            width: 364px;
+            margin-top: 80px;
+            color: #999;
+            border: none;
+            border-top: 1px solid #999
+        }
+
+        /* ------------icon---------- */
+
+        .icon {
+            margin: 30px auto;
+        }
+
+        .qq,.weibo,.pay,.wechat {
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            margin: 0 20px;
+            border-radius: 50%;
+            background: gray url("images/icons_type.png");
+        }
+
+        .qq {
+            background-position-x: -19px;
+        }
+
+        .weibo {
+            background-position-x: -38px;
+        }
+
+        .pay {
+            background-position-x: -59px;
+        }
+
+        .wechat {
+            background-position-x: -87px;
+        }
+
+        .qq:hover,
+        .weibo:hover,
+        .pay:hover,
+        .wechat:hover{
+            background-color: black;
+
+        }
+
+
+
+
+        #name,
+        #login-pwd {
+            width: 350px;
+            height: 30px;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #login-sub {
+            width: 364px;
+            height: 30px;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ----------样式设计---------- */
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .choose {
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 22px;
+        }
+
+        .left {
+            color: #f56600;
+            margin-right: 15px;
+        }
+
+        .right {
+            margin-left: 15px;
+        }
+
+        #name,
+        #login-pwd {
+            padding: 8px 5px;
+            font-size: 16px;
+            /* box-sizing: border-box; */
+            outline: none;;
+        }
+
+        #name {
+            margin-top: 35px;
+        }
+
+
+
+
+
+        #code,
+        #login-pwd {
+            width: 350px;
+            height: 30px;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #login-sub {
+            width: 364px;
+            height: 30px;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ----------样式设计---------- */
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .choose {
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 22px;
+        }
+
+        .left {
+            color: #f56600;
+            margin-right: 15px;
+        }
+
+        .right {
+            margin-left: 15px;
+        }
+
+        #code,
+        #login-pwd {
+            padding: 8px 5px;
+            font-size: 16px;
+            /* box-sizing: border-box; */
+            outline: none;;
+        }
+
+        #code {
+            margin-top: 35px;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body  background="../js/4.jpg" style=" background-repeat:no-repeat ; background-size:100% 100%;  background-attachment: fixed;">
+<div class="login">
+    <a href="#" class="choose left">账号注册</a>
+    <!--<span style="color: #e0e0e0">|</span>
+    <a href="#" class="choose right">扫码登录</a>-->
+    <br>
+    <div>
+        <span id="msg"></span>
+    </div>
+
+    <form id="userForm" action="../teac/addStudent" method="post">
+
+        <input type="text" placeholder="注册账号" id="name" onblur="checkUsername()"  name="account"><span id="msg"></span>
+
+        <input type="password" placeholder="密码" id="login-pwd" name="password">
+
+        <input type="text" placeholder="用户名" id="login-text" name="nickname">
+
+
+        <input type="submit" value="注册" id="login-sub"  >
+    </form>
+
+
+</div>
+</div>
+
+
+<script>
+
+    
+    function checkUsername() {
+        var flag = true;
+
+        var account = $("#name").val();
+    /*    alert(username)*/
+        $.ajax({
+
+            url:'../teac/checkAccount',
+            data:{account:account},
+            type:'post',
+            async:false,
+            success:function (data) {
+                if(data=='userError'){
+                    $("#msg").html("<font color='red'>用户已被注册</font>")
+                    flag = false;
+                }
+                if(data=='success'){
+                    $("#msg").html("<font color='green'>√</font>")
+                }
+            }
+
+        })
+        return flag;
+    }
+    
+    
+    function register() {
+                if(!checkUsername()){
+                    return;
+                }
+
+/*                alert($("#userForm").serialize())*/
+                var form = $("#userForm").serialize();
+                $.ajax({
+
+                    url:"../teac/addStudent",
+                    type:"post",
+                    data:form,
+                    success:function(data){
+                        alert("注册成功！");
+                        location.href="../page/loginStu";
+                    }
+
+
+                })
+
+            }
+
+
+</script>
+
+</body>
+</html>

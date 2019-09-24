@@ -1,0 +1,387 @@
+/*登录页面对应的css文件
+v1.0.0
+Data:2018-07-16;
+*/
+#head{
+	width: 100%;
+	height: 80px;
+	/*background: green;*/
+}
+.head-center{
+	width: 990px;
+	height: 80px;
+	/*background: red;*/
+	margin: 0 auto;/*水平居中*/
+}
+#privacy{
+	width: 100%;
+	height: 40px;
+	background: #FFF8F0;
+}
+.privacy-center{
+	width: 840px;
+	height: 40px;
+	line-height: 40px;/*高度和行高相等，文字上下居中*/
+	margin: 0 auto;/*水平居中*/
+}
+#bodyer{
+	width: 100%;
+	height: 475px;
+	background: #9352FD;
+}
+.bodyer-center{
+	width: 990px;
+	height: 475px;
+	/*background: blue;*/
+	line-height: 40px;/*高度和行高相等，文字上下居中*/
+	margin: 0 auto;/*水平居中*/
+	
+}
+
+.login-form{
+	width: 346px;
+	height: 400px;
+	float: right;
+	position: relative;
+	background: #fff;
+	margin-top: 10px;
+}
+.b-f-private{
+	width: 346px;
+	height: 40px;
+	background: #FFF8F0;
+	line-height: 40px;/*高度和行高相等，文字上下居中*/
+	margin: 0 auto;
+	text-align: center;
+}
+.b-f-private span{
+	color: #999;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 12px;
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+   
+}
+.b-f-private i{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url(../img/3.png);
+    vertical-align: middle;
+}
+.login-opt{
+	height: 54px;
+	font-size: 18px;
+	display: block;
+	/*border: 1px solid #f4f4f4;*/
+	position: relative;
+	color: #999;
+}
+.login-opts{
+	width: 172px;
+	height: 54px;
+	float: left;
+	line-height: 54px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 500;
+
+}
+.login-optz{
+	width: 172px;
+	height: 54px;
+	float: right;
+	line-height: 54px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 800;
+
+}
+.login-opts a{
+	width: 172px;
+	height: 54px;
+	text-decoration: none;
+}
+.login-optz a{
+	width: 172px;
+	height: 54px;
+	text-decoration: none;
+	color: #E4393C;
+}
+.login-opts a:hover{
+	color: #E4393C;
+	text-decoration: none;
+}
+.login-optz a:hover{
+	color: #E4393C;
+	text-decoration: none;
+}
+.login-photo{
+	width: 644px;
+	height: 475px;
+	float: left;
+}
+.loginname{
+	width: 306px;
+	height: 40px;
+    clear: both;
+	margin: 0 auto;
+}
+.loginname input{
+	width: 260px;
+	height: 36px;
+	float: left;
+	color: #666;
+	margin-top: 20px;
+}
+.loginname b{
+	width: 40px;
+	height: 40px;
+	float: left;
+	border-left: 1px solid #bdbdbd;
+	border-top: 1px solid #bdbdbd;
+	border-bottom: 1px solid #bdbdbd;
+	display: inline-block;
+	background-image: url(../img/7.png);
+	background-position: 1px 1px;
+	margin-top: 20px;
+}
+.nloginpwd{
+	width: 306px;
+	height: 40px;
+	clear: both;/*清除浮动*/
+	margin: 0 auto;
+}
+.nloginpwd input{
+    width: 260px;
+	height: 36px;
+	float: right;
+	color: #666;
+	margin-top: 20px;	
+}
+.nloginpwd b{
+	width: 40px;
+	height: 40px;
+	float: left;
+	border-left: 1px solid #bdbdbd;
+	border-top: 1px solid #bdbdbd;
+	border-bottom: 1px solid #bdbdbd;
+	display: inline-block;
+	background-image: url(../img/7.png);
+	background-position: -47px -47px;
+	margin-top: 20px;
+}
+.forget{
+	width: 306px;
+	height: 18px;
+	margin-top: 30px;
+	font-size: 12px;
+}
+.forget span a{
+	color: #666;
+	text-decoration: none;
+	float: right;
+}
+.forget span a:hover{
+	color: red;
+	text-decoration: underline;
+}
+.submit{
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.submit-center{
+	width: 306px;
+	height: 33px;
+	background: #C60000;
+	margin: 0 auto;
+	line-height: 33px;/*高度和行高相等，文字上下居中*/
+
+	text-align: center;
+}
+.submit-center a{
+	color: #fff;
+	text-decoration: none;
+	margin: 0 auto;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 20px;
+}
+#footer{
+	width: 100%;
+	height: 40px;
+}
+.footer-center{
+	width: 900px;
+	height: 40px;
+	margin: 0 auto;/*水平居中*/
+	text-align: center;
+	margin-top: 30px;
+	font-size: 12px;
+	color: #666;
+}
+.footer-center a{
+	color: #666;
+	font-size: 13px;
+	text-decoration: none;
+}
+.footer-center a:hover{
+	color: red;
+	text-decoration: underline;
+}
+#copy{
+	width: 100%;
+	height: 40px;
+	/*background: #FFFFFF;*/
+}
+.copy-center{
+	width: 990px;
+	height: 40px;
+	/*background: #FFFFFF;*/
+	margin: 0 auto;/*水平居中*/
+	text-align: center;
+}
+.copy-center p{
+	color: #777;
+	font-size: 13px;
+}
+.logo{
+	width: 300px;
+	height: 60px;
+	margin-top: 10px;
+	float: left;
+}
+.logo b{
+	width: 110px;
+	height: 40px;
+	/*border: 1px solid red;参考线*/
+	display: block;/*将行内元素显示出来*/
+	float: right;
+	background: url(../img/5.png);
+	margin-top: 20px;
+}
+.login-back b{
+	display: inline-block;/*inline-block 行内的块元素*/
+	width: 18px;
+	height: 14px;
+	background: url(../img/8.png);
+	vertical-align: middle;/*上下居中*/
+}
+.login-back{
+	float: right;
+	margin-top: 52px;
+	font-size: 13px;
+	text-decoration: none;
+	color: #999;
+}
+.login-back:hover{
+	color: #E4393C;
+	text-decoration: underline;
+}
+.privacy-center{
+	font-size: 12px;
+}
+.privacy-center span{
+	color: #999;
+	/*width: 840px;
+	float: left;*/
+	font:12px/150% Arial,Verdana,"\5b8b\4f53";
+}
+.privacy-center span a{
+	color: #333;
+	font-weight: 500;
+	text-decoration: none;
+}
+.privacy-center span a:hover{
+	text-decoration: underline;
+}
+.privacy-center i{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url(../img/3.png);
+	vertical-align: middle;	
+}
+.link-tab{
+	width: 306px;
+	height: 50px;
+	background: #fff;
+	margin: 0 auto;
+	margin-top: 40px;
+	line-height: 50px;/*高度和行高相等，文字上下居中*/
+}
+.link-left{
+	width: 140px;
+	height: 50px;
+	float: left;
+	color: #999;
+	font-size: 12px;
+}
+.left-a{
+	width: 65px;
+	height: 50px;
+	float: left;
+	text-align: center;
+}
+.left-b{
+	width: 65px;
+	height: 50px;
+	float: right;
+	text-align: center;
+}
+.left-a b{
+	display: inline-block;
+	width: 19px;
+	height: 18px;
+	background-image: url(../img/9.png);
+	background-position: 0px 0px;
+	vertical-align: middle;
+}
+.left-b b{
+	display: inline-block;
+	width: 19px;
+	height: 18px;
+	background-image: url(../img/9.png);
+	background-position: 19px 0px;
+	vertical-align: middle;
+}
+.left-a a{
+	text-decoration: none;
+	font-size: 12px;
+	color: #666;	
+}
+.left-b a{
+	text-decoration: none;
+	font-size: 12px;
+	color: #666;	
+}
+.left-a a:hover{
+	text-decoration: underline;
+	color: #E4393C;
+}
+.left-b a:hover{
+	text-decoration: underline;
+	color: #E4393C;
+}
+.link-right{
+	width:  80px;
+	height: 50px;
+	float: right;
+}
+.link-right b{
+	display: inline-block;
+	width: 19px;
+	height: 18px;
+	background-image: url(../img/7.png);
+	background-position: -104px -74px;
+	vertical-align: middle;
+}
+.link-right a{
+	text-decoration: none;
+	font-size: 12px;
+	color: #666;
+}
+.link-right a:hover{
+	text-decoration: underline;
+	color: #E4393C;
+}

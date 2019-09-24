@@ -1,0 +1,10 @@
+/*公共的css样式文件 作用在整个网站的*/
+
+div,body,a,img,b,input{
+	padding: 0px;
+	margin: 0px;
+}
+a{
+	text-decoration: none;
+	color: #999;
+}

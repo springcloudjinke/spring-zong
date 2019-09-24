@@ -1,0 +1,8 @@
+define([], function() {
+//轮播图鼠标经过
+$(".header-carousel").on("mouseenter", function() {
+	$(this).find(".carousel-control-head").addClass("over"); 
+}).on("mouseleave", function(){ 
+	$(this).find(".carousel-control-head").removeClass("over"); 
+});
+})

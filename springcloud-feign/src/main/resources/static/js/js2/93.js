@@ -1,0 +1,3 @@
+window.__loadJs&&window.__loadJs('/edu_modules/ckeditor.init/src/instruction.632d83e0.js?max_age=3153600',1);
+define("edu_modules/ckeditor.init/src/instruction",function(n,t,i){i.exports=function(n,t){var i=CKEDITOR.instances[n],e=$(i.container.$).find("a.cke_button__instruction");e.click(function(n){n.preventDefault(),$.Dialog.show({title:"填写说明",isDisabled:!0,confirm:!0,cancel:"关闭",globalClass:"alert-tips",content:t,extraClass:"hidden"})})}});
+window.__loadJs&&window.__loadJs('/edu_modules/ckeditor.init/src/instruction.632d83e0.js?max_age=3153600',2);

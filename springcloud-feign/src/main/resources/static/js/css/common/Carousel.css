@@ -1,0 +1,114 @@
+/* 颜色递进度 */
+/* 主色调 */
+/* 涉及部分：商品分类菜单；商品详情头部；右侧快捷方式；
+搜索框 */
+/* 次要色调 */
+/* @minor-color: ; */
+/* 关键内容颜色（蓝色） */
+/* 绿色系 */
+/* 灰色系 */
+/* 红色系 */
+/* 黄色系 */
+/* 橙色系 */
+/* 蓝色系 */
+/* 首页涉及颜色--start */
+/* 工具栏toolbar */
+/* 秒杀头部 */
+/* 享品质一栏 */
+/* 橙色 */
+/* 蓝绿色 */
+/* 紫灰色 */
+/* 土红色 */
+/* 紫色 */
+/* 土褐色 */
+/* 爱生活一栏 */
+/* 浅紫色-爱逛 */
+/* 深粉-爱美丽 */
+/* 深紫色-家电馆 */
+/* 蓝黑色-搞机派 */
+/* 蓝绿色-玩3c */
+/* 墨绿色-爱运动 */
+/* 橙色-爱宝宝 */
+/* 浅褐色-爱家 */
+/* 褐色-爱阅读 */
+/* 枣红色-爱车 */
+/* 蓝色-爱游戏 */
+/* 黄橙色-生活旅行 */
+/* 紫色-金融 */
+/* 深蓝色 */
+/* 墨绿色 */
+/* 购特色 */
+/* 店铺公共头 */
+/* 右侧快捷方式 */
+/* 购物车涉及颜色 */
+/* home涉及颜色 */
+/* 加入购物车 */
+/* 订单结算页 */
+.ad-carousel {
+  position: relative;
+  margin-bottom: 10px;
+  height: 100%;
+  width: 100%;
+}
+.ad-carousel:hover .nextPic,
+.ad-carousel:hover .prevPic {
+  display: block;
+}
+.imgList li {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.imgList img {
+  width: 100%;
+  max-height: 100%;
+}
+.picOrder {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 20px;
+  font-size: 0;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.roundTab {
+  display: inline-block;
+  margin-right: 10px;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background-color: #fff;
+  /* 
+	&:hover{background-color: @red-light;} */
+}
+.roundTab:last-child {
+  margin-right: 0;
+}
+.roundTab-on {
+  background-color: #ea3845;
+}
+.nextPic,
+.prevPic {
+  display: none;
+  position: absolute;
+  width: 30px;
+  height: 60px;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-size: 48px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 55px;
+}
+.nextPic {
+  top: 45%;
+  right: 0;
+}
+.prevPic {
+  top: 45%;
+  left: 0;
+}

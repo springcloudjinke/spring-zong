@@ -1,0 +1,7 @@
+define(["CommonHeaderCarousel",
+        "CommonHeaderLogin",
+        "CommonFixedToolBar",
+        "CommonIcourseSortItem"], function() {
+	
+	
+});
